@@ -9,6 +9,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= link_to root_path do %>
+    <h1>MyFav</h1>
+  <% end %>
+
+
   <body>
     <%= yield %>
   </body>
