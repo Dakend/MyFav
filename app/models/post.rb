@@ -19,8 +19,7 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  belongs_to :movie_list
+  has_many :movies, dependent: :destroy
   validates :title, presence: true
   validates :user_id, presence: true
-  # validates :movie_list_id, presence: true
 end
