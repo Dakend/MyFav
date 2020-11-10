@@ -1,0 +1,54 @@
+<div class="post-content">
+  <div class="post-content__line">
+   <hr>
+  </div>
+  <div class="post-content__icon">
+   <img src="https://picsum.photos/200/300" class="post-content__icon-img">
+  </div>
+   <div class="post-content__space"></div>
+    <div class="post-content__label">
+    <div class="post-content__label-username"><%= User.find(4).name %></div>
+    <span>-</span>
+    <div class="post-content__label-date">3日前</div>
+  </div>
+  <div class="post-content__info">
+    <div class="post-content__info-ttl"><%= User.find(4).posts.find(8).title %></div>
+    <div class="post-content__info-genre">IT</div>
+    <div class="post-content__info-hash">#Python #Django</div>
+    <div class="post-content__info-action">
+    <div class="info-action">
+      <div class="info-action__reply-logo">
+        <i class="far fa-comment fa-2x"></i>
+      </div>
+      <div class="info-action__reply-number">3</div>
+      <div class="info-action__favorite-logo">
+        <i class="fas fa-heart fa-2x"></i>
+      </div>
+      <div class="info-action__favorite-number">3</div>
+      <div class="info-action__bookmark-logo">
+        <i class="fas fa-bookmark fa-2x"></i>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="post-content__comment">
+      <div class="post-content__comment-label">Comment</div>
+      <div class="post-content__comment-txt">
+        <%= User.find(4).posts.find(8).content %>
+      </div>
+    </div>
+    <div class="post-content__main">
+    <% User.find(4).posts.find(8).movies.each do |movie| %>
+      <div class="card">
+        <a href=<%= movie.link %> target="_blank"> 
+          <img class="card__img" src=<%= movie.image %> alt="">
+        </a>
+        <div class="card__info">
+          <a href=<%= movie.link %> target="_blank">
+            <div class="card__info-ttl"><%= movie.title %></div>
+          </a>
+          <div class="card__info-txt"><%= movie.content %></div>
+        </div>
+      </div>
+    <% end %>
+</div>

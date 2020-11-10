@@ -1,0 +1,39 @@
+@import 'common/color';
+@import 'common/format';
+
+header {
+    height: 60px;
+    background-color: $main_color;
+    display: flex;
+
+    .header-logo {
+        width: 100px;
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .header-search {
+        width: 600px;
+        border: 1px solid black;
+        margin-left: 300px;
+    }
+    .header-post {
+        width: 150px;
+        margin-left: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        &__link {
+        }
+    }
+    .header-login {
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        &__link {
+            
+        }
+    }
+}

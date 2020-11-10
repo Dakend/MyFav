@@ -1,0 +1,31 @@
+@import 'common/color';
+@import 'common/format';
+
+aside {
+    height: 1200px;
+    width: 200px;
+    background-color: $main_color;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-evenly;
+    ul {
+        padding: 0;
+    }
+    li {
+        text-align: left;
+    }
+    .nav-top {
+        background-color: aqua;
+        height: 200px;
+        // display: flex;
+        // flex-direction: column;
+    }
+    .nav-category {
+        background-color: aquamarine;
+        height: 400px;
+    }
+    .nav-tag {
+        height: 400px;
+        background-color: beige;
+    }
+}

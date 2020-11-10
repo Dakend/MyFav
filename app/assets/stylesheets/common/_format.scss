@@ -1,0 +1,6 @@
+@mixin just-text($position: center) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: $position;
+}
