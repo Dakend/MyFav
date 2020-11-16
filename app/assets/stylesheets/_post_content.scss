@@ -3,12 +3,15 @@
 
 
 .post-content {
-    width: 1250px;
+    // width: 1250px;
+    // background-color: #fff;
+    width: 74%;
     height: 510px;
+    // height: 530px;
     margin: auto;
     display: grid;
-    margin-bottom: 70px;
-    grid-template-rows: 30px 50px 50px 80px 300px;
+    margin-bottom: 40px;
+    grid-template-rows: 30px 50px 50px 80px 280px;
     grid-template-columns: 80px 1fr 20px;
     grid-template-areas:
         "line line      line"
@@ -19,9 +22,10 @@
     
     &__line {
         grid-area: line;
+        // background-color: #f0f0f0;
         hr {
             height: 5px;
-            background-color: $main_color;
+            @include bg-main-color;
             border: none;
         }
     }
@@ -34,6 +38,7 @@
             height: 60px;
             width: 60px;
             border-radius: 50%;
+            object-fit: cover;
             border: 1px solid black;
             margin: auto;
             display: block;
@@ -59,8 +64,10 @@
         &-ttl {
             height: 40px;
             width: 50%;
-            border: 2px solid $main_border-color;
+            @include border-sub-color;
+            background-color: #fff;
             border-right: none;
+            border-radius: 10px 0 0 10px;
             font-weight:bolder;
             font-size: 1.1em;
             @include just-text;
@@ -68,7 +75,8 @@
         &-genre {
             height: 40px;
             width: 10%;
-            border: 2px solid $main_border-color;
+            @include border-sub-color;
+            background-color: #fff;
             border-right: none;
             margin: auto;
             @include just-text;
@@ -76,14 +84,17 @@
         &-hash {
             height: 40px;
             width: 20%;
-            border: 2px solid $main_border-color;
+            @include border-sub-color;
+            background-color: #fff;
             border-right: none;
             margin: auto;
             @include just-text;
         }
         &-action {
             width: 20%;
-            border: 2px solid $main_border-color;
+            @include border-sub-color;
+            background-color: #fff;
+            border-radius: 0 10px 10px 0;
             .info-action {
                 height: 40px;
                 display: flex;
@@ -124,7 +135,9 @@
         &-label {
             height: 60px;
             width: 10%;
-            border: 2px solid $main_border-color;
+            @include border-sub-color;
+            background-color: #fff;
+            border-radius: 10px 0 0 10px;
             border-right: none;
             @include just-text;
         }
@@ -132,7 +145,9 @@
             height: 60px;
             width: 60%;
             font-size: 0.8em;
-            border: 2px solid $main_border-color;
+            @include border-sub-color;
+            background-color: #fff;
+            border-radius: 0 10px 10px 0;
             padding-left: 15px;
             @include just-text(left);
         }
@@ -143,31 +158,44 @@
         justify-content: space-around;
         .card {
             width: 280px;
-            height: 300px;
-            border: 2px solid $main_border-color;
+            height: 280px;
+            @include border-sub-color;
+            background-color: #fff;
+            border-radius: 10px;
             a {
                 text-decoration: none;
                 color: black;
             }
             &__img {
                 width: 100%;
-                height: 50%;
-                @include just-text;
+                height: 150px;
+                overflow: hidden;
+                &-cont {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px 10px 0 0;
+                    object-fit: cover;
+                    transition:0.2s all;
+                }
+            }
+            &:hover {
+                box-shadow:0px 0px 5px;
+                .card__img-cont {
+                    transform:scale(1.2,1.2);
+                    transition:0.2s all;
+                }
             }
             &__info {
-                height: 50%;
+                height: 130px;
                 &-ttl {
-                    height: 40px;
+                    height: 30%;
                     font-size: 0.8em;
                     @include just-text;
-                    border-bottom: 2px solid $main_border-color;
+                    border-bottom: 2px solid $sub-color;
                 }
                 &-txt {
-                    height: 110px;
-                    font-size: 0.75em;
-                    text-align: left;
-                    margin-top: 5px;
-                    padding-left: 10px;
+                    font-size: 0.72em;
+                    margin: 7px;
                 }
             }
         }

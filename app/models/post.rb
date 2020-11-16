@@ -23,4 +23,8 @@ class Post < ApplicationRecord
   has_many :movies, dependent: :destroy
   validates :title, presence: true
   validates :user_id, presence: true
+
+  def username
+    User.find(self.user_id).name
+  end
 end

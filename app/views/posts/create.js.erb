@@ -1,0 +1,20 @@
+<% if @post_form.errors.any? %>
+  document.getElementById('errors').innerHTML = '<%= j(render 'shared/error_messages', model: @post_form) %>';
+  document.getElementById('errors').classList.add("active");
+  var scroll = () => {
+    let element = document.getElementById('modal-post-form__header');    
+    element.scrollIntoView(true);
+  };
+  scroll();
+<% else %>
+  document.getElementById("modal-post-form").classList.remove('active');
+  document.getElementById("modal-post-mask").classList.remove('active');
+  var deleteElement = document.querySelectorAll('.form-control, .form-control-area');
+  for(let i = 0; i < deleteElement.length; i++){
+    deleteElement[i].value = '';
+  }
+  var postContents = document.getElementsByClassName('post-content');
+  var firstPostContent = postContents[0];
+  insertPostContent = '<%= j(render 'shared/post_content', post: @new_post) %>';
+  firstPostContent.insertAdjacentHTML('beforebegin', insertPostContent);
+<% end %>

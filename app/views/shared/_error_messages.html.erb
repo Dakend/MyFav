@@ -1,0 +1,8 @@
+ <% if model.errors.any? %>
+  <ul>
+    <li>⚠︎ エラーが発生しました。以下の項目について確認してください。</li>
+    <% model.errors.full_messages.each do |message| %>
+      <li>&emsp;&emsp;</span>-<%= message %></li> 
+    <% end %>
+  </ul>
+<% end %>

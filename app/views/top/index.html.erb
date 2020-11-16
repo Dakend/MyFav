@@ -1,2 +1,4 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
+<%= render 'posts/post_header' %>
+<% @posts.each do |post| %>
+  <%= render 'shared/post_content', post: post %>
+<% end %>
