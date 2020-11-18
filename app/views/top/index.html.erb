@@ -1,0 +1,4 @@
+<%= render 'posts/post_header' %>
+<% @posts.each do |post| %>
+  <%= render 'shared/post_content', post: post %>
+<% end %>

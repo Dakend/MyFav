@@ -1,0 +1,21 @@
+@import 'common/format';
+
+.post-header {
+    height: 60px;
+    width: 80%;
+    margin: 0 auto 15px auto;
+    &__count {
+        width: 10%;
+        height: 100%;
+        display: flex;
+        &-txt {
+            font-size: 0.8em;
+            @include just-text(left);
+        }
+        &-num {
+            font-size: 1.5em;
+            font-weight: bold;
+            @include just-text(left);
+        }
+    }
+}
