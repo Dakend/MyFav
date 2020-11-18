@@ -8,7 +8,7 @@
 
 3.times do |n|
   User.create!(
-    email: "test#{n + 1}@examle.com",
+    email: "test#{n + 1}@example.com",
     password: "password_#{n + 1}",
     name: "test_user_#{n + 1}",
   )
@@ -25,7 +25,7 @@ end
 posts = Post.all
 3.times do |n|
    content = Faker::Lorem.sentence(word_count: 5)
-   image = "sample/test/#{n + 1}"
+   image = "https://picsum.photos/210/310"
    link = "https://www.youtube.com/"
    title = "test_title_#{n + 1}"
    post_id = n + 1

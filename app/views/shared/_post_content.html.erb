@@ -1,4 +1,4 @@
-<div class="post-content">
+<div class="post-content" id="post-content-<%= post.id %>">
   <div class="post-content__line">
    <hr>
   </div>
@@ -25,9 +25,14 @@
           <i class="fas fa-heart fa-2x"></i>
         </div>
         <div class="info-action__favorite-number">3</div>
-        <div class="info-action__bookmark-logo">
-          <i class="fas fa-bookmark fa-2x"></i>
-        </div>
+        <% if user_signed_in? && !(current_user.id == post.user_id) %>
+          <div class="info-action__bookmark-logo">
+            <i class="fas fa-bookmark fa-2x"></i>
+          </div>
+        <% end %>
+        <% if user_signed_in? && current_user.id == post.user_id %>
+          <%= render "posts/post_delete", post: post%>
+        <% end %>
       </div>
     </div>
   </div>

@@ -51,10 +51,12 @@
         align-items: center;
         &-username {
             font-weight:bolder;
+            font-size: 1.1em;
             margin-right: 10px;
         }
         &-date {
             margin-left: 10px;
+            font-size: 0.8em;
         }
     }
     &__info {
@@ -124,6 +126,14 @@
                     font-size: 0.8em;
                     @include just-text(left);
                 }
+                &__delete-logo {
+                    width: 20%;
+                    color: #c0c0c0;
+                    @include just-text;
+                    &:hover {
+                        color: red;
+                    }
+                }
             }
         }
     }
@@ -162,6 +172,9 @@
             @include border-sub-color;
             background-color: #fff;
             border-radius: 10px;
+            &:hover {
+                opacity: 0.8;
+            }
             a {
                 text-decoration: none;
                 color: black;
