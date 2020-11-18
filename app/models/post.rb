@@ -19,12 +19,17 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  default_scope -> { order(created_at: :desc) }
   has_many :movies, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  default_scope -> { order(created_at: :desc) }
   validates :title, presence: true
   validates :user_id, presence: true
 
   def username
     User.find(self.user_id).name
+  end
+
+  def bookmarked_by(user)
+    bookmarks.where(user_id: user.id).exists?
   end
 end
