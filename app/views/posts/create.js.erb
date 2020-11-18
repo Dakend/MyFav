@@ -12,12 +12,14 @@ var notification = (message) => {
 var scroll = () => {
   let element = document.getElementById('modal-post-form__header');    
   element.scrollIntoView(true);
-};
+}; 
+
 
 <% if @post_form.errors.any? %>
   document.getElementById('errors').innerHTML = '<%= j(render 'shared/error_messages', model: @post_form) %>';
   document.getElementById('errors').classList.add("active");
   scroll();
+
 <% else %>
   document.getElementById("modal-post-form").classList.remove('active');
   document.getElementById("modal-post-mask").classList.remove('active');

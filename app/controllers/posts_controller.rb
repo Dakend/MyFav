@@ -4,13 +4,10 @@ class PostsController < ApplicationController
     # binding.pry
     @post_form = PostForm.new(post_params)
     if @post_form.save
-      flash[:success] = "Post created!"
       # binding.pry
       @new_post = Post.where(user_id: current_user.id).order(updated_at: :desc).limit(1).first
     else
       # binding.pry
-      flash[:success] = "hoge!!!!!"
-      @flash = flash
     end
   end
 
