@@ -114,12 +114,14 @@
                 &__bookmark-logo {
                     width: 20%;
                     @include just-text;
-                    color: #c0c0c0;
-                    &-on {
+                    &-marked {
                         color: #ffd700;
                     }
-                    &.on {
-                        color: #ffd700;
+                    &-nonmarked {
+                        color: #c0c0c0;
+                        &:hover {
+                            color: #ffd700;
+                        }
                     }
                 }
                 &__reply-number {
