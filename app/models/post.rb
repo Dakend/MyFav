@@ -29,7 +29,7 @@ class Post < ApplicationRecord
     User.find(self.user_id).name
   end
 
-  def bookmarked_by(user)
+  def is_bookmarked_by?(user)
     bookmarks.where(user_id: user.id).exists?
   end
 end
