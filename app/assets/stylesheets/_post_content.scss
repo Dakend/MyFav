@@ -113,8 +113,16 @@
                 }
                 &__bookmark-logo {
                     width: 20%;
-                    color: #ffd700;
                     @include just-text;
+                    &-marked {
+                        color: #ffd700;
+                    }
+                    &-nonmarked {
+                        color: #c0c0c0;
+                        &:hover {
+                            color: #ffd700;
+                        }
+                    }
                 }
                 &__reply-number {
                     width: 10%;

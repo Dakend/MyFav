@@ -1,3 +1,5 @@
-<%= link_to post_path(post), method: :delete, remote: true, class: "info-action__delete-logo", data: { confirm: "削除しますか？" } do %> 
-  <i class="far fa-trash-alt fa-2x"></i>
+<% if user_signed_in? && current_user.id == post.user_id %>
+  <%= link_to post_path(post), method: :delete, remote: true, class: "info-action__delete-logo", data: { confirm: "削除しますか？" } do %> 
+    <i class="far fa-trash-alt fa-2x"></i>
+  <% end %>
 <% end %>
