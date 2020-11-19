@@ -1,0 +1,11 @@
+<% if user_signed_in? && !(current_user.id == post.user_id) %>
+  <% if post.is_bookmarked_by?(current_user) %> 
+    <%= link_to post_bookmarks_path(post), method: :delete, remote: true, class: "info-action__bookmark-logo-on" do %> 
+      <i class="fas fa-bookmark fa-2x"></i>
+    <% end %>
+  <% else %>
+    <%= link_to post_bookmarks_path(post), method: :post, remote: true, class: "info-action__bookmark-logo" do %>
+      <i class="fas fa-bookmark fa-2x"></i>
+    <% end %>
+  <% end %>
+<% end %>

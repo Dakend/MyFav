@@ -23,5 +23,5 @@ class Bookmark < ApplicationRecord
   belongs_to :user
   belongs_to :post
   default_scope -> { order(created_at: :desc) }
-  validates :user_id,　uniqueness: { scope: :post_id }
+  validates_uniqueness_of :post_id, scope: :user_id
 end
