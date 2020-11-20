@@ -108,8 +108,16 @@
                 }
                 &__favorite-logo {
                     width: 20%;
-                    color: #ff69b4;
                     @include just-text;
+                    &-marked {
+                        color: #ff69b4;
+                    }
+                    &-nonmarked {
+                        color: #c0c0c0;
+                        &:hover {
+                            color: #ff69b4;
+                        }
+                    }
                 }
                 &__bookmark-logo {
                     width: 20%;
