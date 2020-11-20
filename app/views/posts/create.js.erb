@@ -1,25 +1,7 @@
-var notification = (message) => {
-  let toast = document.getElementById('toast');
-  let toastContent = document.getElementById('toast__txt');
-  toastContent.innerHTML = message;
-  toast.style.visibility = 'visible';
-  setTimeout(() => {
-        toastContent.innerHTML = '';
-        toast.style.visibility = 'hidden';
-  }, 4000);
-};
-
-var scroll = () => {
-  let element = document.getElementById('modal-post-form__header');    
-  element.scrollIntoView(true);
-}; 
-
-
 <% if @post_form.errors.any? %>
   document.getElementById('errors').innerHTML = '<%= j(render 'shared/error_messages', model: @post_form) %>';
   document.getElementById('errors').classList.add("active");
-  scroll();
-
+  notice("test");
 <% else %>
   document.getElementById("modal-post-form").classList.remove('active');
   document.getElementById("modal-post-mask").classList.remove('active');
@@ -28,11 +10,10 @@ var scroll = () => {
     deleteElement[i].value = '';
   }
   document.getElementById('errors').innerHTML = '';
-  scroll();
   var postContents = document.getElementsByClassName('post-content');
   var firstPostContent = postContents[0];
   insertPostContent = '<%= j(render 'shared/post_content', post: @new_post) %>';
   firstPostContent.insertAdjacentHTML('beforebegin', insertPostContent);
   document.getElementById('post-header__count-num').innerHTML = <%= Post.count %>;
-  notification('投稿が完了しました。');
+  notice('投稿が完了しました。');
 <% end %>

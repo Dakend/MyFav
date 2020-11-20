@@ -1,0 +1,15 @@
+<div id="notification">
+  <div id="notification__txt">hoge</div>
+</div>
+<script>
+  const notice = (message) => {
+    let notification = document.getElementById('notification');
+    let notificationContent = document.getElementById('notification__txt');
+    notificationContent.innerHTML = message;
+    notification.style.visibility = 'visible';
+    setTimeout(() => {
+            notificationContent.innerHTML = '';
+            notification.style.visibility = 'hidden';
+    }, 4000);
+  };
+</script>

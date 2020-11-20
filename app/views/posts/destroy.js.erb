@@ -1,14 +1,3 @@
-var notification = (message) => {
-  let toast = document.getElementById('toast');
-  let toastContent = document.getElementById('toast__txt');
-  toastContent.innerHTML = message;
-  toast.style.visibility = 'visible';
-  setTimeout(() => {
-        toastContent.innerHTML = '';
-        toast.style.visibility = 'hidden';
-  }, 4000);
-};
-
 document.getElementById("post-content-<%= @post.id %>").outerHTML = '';
 document.getElementById('post-header__count-num').innerHTML = <%= Post.count %>;
 notification('投稿を削除しました。');
