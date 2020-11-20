@@ -21,10 +21,7 @@
           <i class="far fa-comment fa-2x"></i>
         </div>
         <div class="info-action__reply-number">3</div>
-        <div class="info-action__favorite-logo">
-          <i class="fas fa-heart fa-2x"></i>
-        </div>
-        <div class="info-action__favorite-number">3</div>
+        <%= render "posts/post_favorite", post: post %>
         <%= render "posts/post_bookmark", post: post %>
         <%= render "posts/post_delete", post: post %>
       </div>

@@ -21,6 +21,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :movies, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   validates :title, presence: true
   validates :user_id, presence: true
@@ -31,5 +32,9 @@ class Post < ApplicationRecord
 
   def is_bookmarked_by?(user)
     self.bookmarks.where(user_id: user.id).exists?
+  end
+
+  def is_favorited_by?(user)
+    self.favorites.where(user_id: user.id).exists?
   end
 end
