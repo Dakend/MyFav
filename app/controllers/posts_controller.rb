@@ -1,20 +1,23 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
+
   def create
-    # binding.pry
     @post_form = PostForm.new(post_params)
     if @post_form.save
-      # binding.pry
       @new_post = Post.where(user_id: current_user.id).order(updated_at: :desc).limit(1).first
-    else
-      # binding.pry
+      flash[:notice] = "投稿が完了しました。"
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy!
-    # binding.pry
+    redirect_to root_path, notice: "投稿を削除しました。"
+  end
+
+  def show
+    @post_form = PostForm.new
+    @post = Post.find(params[:id])
   end
 
   private
@@ -26,4 +29,5 @@ class PostsController < ApplicationController
                                         :movie_link_4, :movie_content_4)
                                         .merge(user_id: current_user.id)
     end
+
 end

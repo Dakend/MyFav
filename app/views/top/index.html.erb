@@ -1,4 +1,8 @@
-<%= render 'posts/post_header' %>
-<% @posts.each do |post| %>
-  <%= render 'shared/post_content', post: post %>
-<% end %>
+<div class="post-top-container">
+  <%= render 'posts/post_header' %>
+  <div class="post-head-container">
+    <% @posts.each do |post| %>
+      <%= render 'shared/post_head_content', post: post %>
+    <% end %>
+  </div>
+</div>

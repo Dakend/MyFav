@@ -1,19 +1,7 @@
 <% if @post_form.errors.any? %>
   document.getElementById('errors').innerHTML = '<%= j(render 'shared/error_messages', model: @post_form) %>';
   document.getElementById('errors').classList.add("active");
-  notice("test");
+  <%# notice("test"); %>
 <% else %>
-  document.getElementById("modal-post-form").classList.remove('active');
-  document.getElementById("modal-post-mask").classList.remove('active');
-  var deleteElement = document.querySelectorAll('.form-control, .form-control-area');
-  for(let i = 0; i < deleteElement.length; i++){
-    deleteElement[i].value = '';
-  }
-  document.getElementById('errors').innerHTML = '';
-  var postContents = document.getElementsByClassName('post-content');
-  var firstPostContent = postContents[0];
-  insertPostContent = '<%= j(render 'shared/post_content', post: @new_post) %>';
-  firstPostContent.insertAdjacentHTML('beforebegin', insertPostContent);
-  document.getElementById('post-header__count-num').innerHTML = <%= Post.count %>;
-  notice('投稿が完了しました。');
+  window.location.replace("<%= post_path(@new_post) %>")
 <% end %>

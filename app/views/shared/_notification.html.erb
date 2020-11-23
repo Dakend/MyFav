@@ -1,15 +1,18 @@
 <div id="notification">
-  <div id="notification__txt">hoge</div>
+  <div id="notification__txt"></div>
 </div>
 <script>
-  const notice = (message) => {
+  var notice = (msg) => {
     let notification = document.getElementById('notification');
     let notificationContent = document.getElementById('notification__txt');
-    notificationContent.innerHTML = message;
+    notificationContent.innerHTML = msg;
     notification.style.visibility = 'visible';
     setTimeout(() => {
             notificationContent.innerHTML = '';
             notification.style.visibility = 'hidden';
     }, 4000);
   };
+  <% if flash.any? %>
+    notice("<%= flash[:notice]%>");
+  <% end %>
 </script>

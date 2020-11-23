@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'top#index'
   devise_for :users
   resources :users, except: [:index]
-  resources :posts, only: [:create, :destroy] do
+  resources :posts, only: [:create, :destroy, :show] do
     resource :bookmarks, only: [:create, :destroy]
     get :bookmarks, on: :collection
     resource :favorites, only: [:create, :destroy]

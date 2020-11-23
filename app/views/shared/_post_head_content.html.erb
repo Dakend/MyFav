@@ -1,0 +1,29 @@
+<div class="post-card">
+  <%= link_to post_path(post) do %>
+    <div class="post-card__flame">
+      <div class="card-img">
+        <% post.movies.each do |movie| %>
+          <img class="card-img__cont" src=<%= movie.image %> alt="">
+        <% end %>
+      </div>
+    </div>
+    <div class="post-card__info">
+      <div class="info-header">
+        <img class="info-header__icon" src="https://picsum.photos/190/190" alt="">
+        <div class="info-header__ttl"><%= post.title %></div>
+      </div>
+      <div class="info-detail">
+        <div class="section-1">
+          <div class="section-1__favorite-logo">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="section-1__favorite-number"><%= post.favorites.count %></div>
+          <div class="section-1__username"><%= post.username %></div>
+        </div>
+        <div class="section-2">
+          <div class="section-2__date">2020/12/1</div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
