@@ -1,0 +1,111 @@
+@import 'common/format';
+@import 'common/color';
+
+.post-card {
+    width: 300px;
+    height: 255px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 20px 0;
+    &:hover {
+        box-shadow: 0px 0px 16px -6px rgba(0,0,0,0.6);
+        .card-img {
+            transform:scale(1.1,1.1);
+            transition:0.2s all;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: #030303;
+    }
+    &__flame {
+        overflow: hidden;
+        @include bg-main-color;
+        border-radius: 15px;
+        .card-img {
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 15px 15px 0 0;
+            transition:0.2s all;
+            &__cont {
+                width: 150px;
+                height: 80px;
+                display: block;
+                object-fit: cover;
+                &:first-child {
+                    border-radius: 15px 0 0 0;
+                }
+                &:nth-child(2) {
+                    border-radius: 0 15px 0 0;
+                }
+                &:nth-child(3) {
+                    border-radius: 0 0 0 15px;
+                }
+                &:nth-child(4) {
+                    border-radius: 0 0 15px 0;
+                }
+            }
+        }
+    }
+    &__info {
+        width: 100%;
+        height: 90px;
+        .info-header {
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            &__icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                @include bg-main-color;
+                margin: auto 5px;
+                display: block;
+            }
+            &__ttl {
+                width: 245px;
+                font-size: 0.95rem;
+                @include just-text(left);
+                margin-left: 5px;
+            }
+        }
+        .info-detail {
+            height: 40px;
+            border-radius: 0 0 10px 10px;
+            display: flex;
+            flex-direction: column;
+            font-size: 0.8rem;
+            color: #606060;
+            .section-1 {
+                height: 20px;
+                display: flex;
+                &__favorite-logo {
+                    width: 20px;
+                    @include just-text;
+                    margin-left: 10px;
+                    color: #ff69b4;
+                }
+                &__favorite-number {
+                    width: 10px;
+                    font-size: 0.75rem;
+                    @include just-text(left);
+                }
+                &__username {
+                    @include just-text(left);
+                    margin-left: 15px;
+                }
+            }
+            .section-2 {
+                height: 20px;
+                &__date {
+                    width: 100px;
+                    @include just-text(left);
+                    margin-left: 55px;
+                }
+            }
+        }
+    }
+}

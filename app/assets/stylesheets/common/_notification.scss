@@ -1,9 +1,9 @@
 @import 'common/color';
 @import 'common/format';
 
-#toast {
+#notification {
     width: 250px;
-    height: 55px;
+    height: 40px;
     @include just-text;
     visibility: hidden;
     z-index: 99;

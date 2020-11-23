@@ -1,0 +1,18 @@
+<div class="post-show-container">
+  <div class="post-show-section-1">
+    <%= render 'shared/post_content', post: @post %>
+  </div>
+  <div class="post-show-section-2">
+    <%= render 'posts/post_comment' %>
+  </div>
+  <div class="post-show-section-3">
+    <div class="post-related-container">
+      <div class="related-header">関連</div>
+      <div class="related-content">
+        <%= render 'shared/post_head_content', post: @post %>
+        <%= render 'shared/post_head_content', post: @post %>
+        <%= render 'shared/post_head_content', post: @post %>
+      </div>
+    </div>
+  </div>
+</div>

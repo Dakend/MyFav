@@ -1,7 +1,63 @@
+@import 'common/color';
+@import 'common/format';
+
 body {
     margin: 0 auto;
 }
+
 .wrapper {
-    background-color: #f0f0f0;
     margin: 70px auto 0;
+}
+
+.post-top-container {
+    background-color: #f0f0f0;
+}
+
+.post-head-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.post-head-container::before {
+    content: "";
+    display: block;
+    width: 300px;
+    order: 1;
+}
+.post-head-container::after {
+    content: "";
+    display: block;
+    width: 300px;
+}
+
+.post-show-container {
+    .post-show-section-line {
+        margin: 5px;
+    }
+    .post-show-section-1 {
+        background-color: #f0f0f0;
+    }
+    .post-show-section-2 {
+        background-color: #fcfcfc;
+        margin: 0 auto;
+    }
+    .post-show-section-3 {
+        background-color: #f0f0f0;
+        .post-related-container {
+            width: 75%;
+            margin: 0 auto;
+            .related-header {
+                height: 2rem;
+                padding-top: 20px;
+                font-size: 1.1rem;
+                width: 100%;
+            }
+            .related-content {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
 }

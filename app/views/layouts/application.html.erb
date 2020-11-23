@@ -11,13 +11,12 @@
 
   <body>
       <%= render 'layouts/header' %>
-      <%= render 'shared/toast' %>
       <div class="wrapper">
         <main>
           <%= yield %>
         </main>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <%= debug(params) if Rails.env.development? %>
       </div>
+      <%= render 'shared/notification' %>
   </body>
 </html>
