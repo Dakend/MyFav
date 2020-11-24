@@ -12,6 +12,21 @@
         font-size: 1.1rem;
         width: 100%;
     }
+    .comment-errors {
+        width: 50%;
+        margin: 0 auto 20px auto;
+        &.active {
+            background-color: #ffe8ec;
+            border: 1px solid red;
+            border-radius: 7px;
+            @include just-text(left);
+            ul {
+                list-style: none;
+                color: red;
+                font-size: 0.75em;
+            }
+        }
+    }
     .comment-form {
         height: 70px;
         width: 85%;
@@ -21,44 +36,50 @@
         &__icon {
             width: 60px;
             height: 40px;
-            object-fit: cover;
-            @include bg-main-color;
+            &-img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                @include bg-main-color;
+                display: block;
+            }
         }
         &__main {
-            width: 100%;
-            textarea {
-                width: 100%;
-                display: block;
-                resize: none;
-                box-shadow: none;
-                border-radius: 0;
-                border: 2px solid #ccc;
-                outline: none;
-                border-style: none none solid none;
-                transition: all 0.3s;
-                &:focus {
-                    border-color: red;
-                    &-within {
-                        transform: scale(1.01, 1.01);
+            width: 94%;
+            .post-comment-form {
+                &__body {
+                    width: 100%;
+                    display: block;
+                    resize: none;
+                    box-shadow: none;
+                    border-radius: 0;
+                    border: 2px solid #ccc;
+                    outline: none;
+                    border-style: none none solid none;
+                    transition: all 0.3s;
+                    &:focus {
+                        border-color: red;
+                        &-within {
+                            transform: scale(1.01, 1.01);
+                        }
                     }
                 }
-            }
-            button {
-                display: block;
-                width: 80px;
-                height: 25px;
-                @include bg-main-color;
-                color: #fff;
-                font-size: 1em;
-                font-weight: bold;
-                border-radius: 15px;
-                border-style: none;
-                cursor: pointer;
-                margin: 7px 0 0 auto;
-                &:hover {
-                    background: #fff;
-                    color: #000000;
-                    border: 2px solid red;
+                &__btn {
+                    display: block;
+                    width: 80px;
+                    height: 25px;
+                    background-color: $sub-color;
+                    color: #fff;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    border-style: none;
+                    cursor: pointer;
+                    margin: 7px 0 0 auto;
+                    &:hover {
+                        @include bg-main-color;
+                    }
                 }
             }
         }
@@ -70,9 +91,17 @@
         margin-bottom: 20px;
         border-top: 1px solid $sub-color;
         &__icon {
-            width: 60px;
-            object-fit: cover;
-            @include bg-main-color;
+            width: 50px;
+            margin-top: 4px;
+            &-img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                @include bg-main-color;
+                display: block;
+                
+            }
         }
         &__main {
             display: flex;
@@ -81,11 +110,20 @@
             height: 100%;
             margin-left: 10px;
             .comment-info {
-                display: flex;
                 &__username {
                     font-size: 0.8rem;
-                    width: 100%;
                     height: 1rem;
+                }
+                &__date {
+                    font-size: 0.8em;
+                    color: #606060;
+                }
+                &__delete {
+                    font-size: 0.8em;
+                    color: #606060;
+                    &:hover {
+                        color: red;
+                    }
                 }
             }
             &-txt {

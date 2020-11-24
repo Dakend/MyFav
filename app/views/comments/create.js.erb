@@ -1,0 +1,16 @@
+<% if @comment.errors.any? %>
+  document.getElementById('comment-errors').innerHTML = '<%= j(render 'shared/error_messages', model: @comment) %>';
+  document.getElementById('comment-errors').classList.add("active");
+<% else %>
+  var insertCommentBlock = '<%= j(render 'comments/comment_content', comment: @comment) %>';
+  var commentContents = document.getElementsByClassName('comment-content');
+  if (commentContents.length) {
+    let firstCommentBlock = document.getElementsByClassName('comment-content')[0];
+    firstCommentBlock.insertAdjacentHTML('beforebegin', insertCommentBlock);
+  } else {
+    let formBlock = document.getElementById('comment-form');
+    formBlock.insertAdjacentHTML('afterend', insertCommentBlock);
+  }
+  document.getElementById('post-comment-form-body').value = '';
+  document.getElementById('comment-count').innerHTML = <%= @comment.post.comments.count %>;
+<% end %>

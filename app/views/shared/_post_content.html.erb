@@ -1,10 +1,10 @@
 <div class="post-content-container">
   <div class="post-content" id="post-content-<%= @post.id %>">
     <div class="post-content__icon">
-    <img src="https://picsum.photos/200/300" class="post-content__icon-img">
+      <img src="https://picsum.photos/200/300" class="post-content__icon-img">
     </div>
     <div class="post-content__label">
-      <div class="post-content__label-username"><%= @post.username %></div>
+      <div class="post-content__label-username"><%= @post.user.name %></div>
       <span>-</span>
       <div class="post-content__label-date">3日前</div>
     </div>
@@ -17,7 +17,7 @@
           <div class="info-action__reply-logo">
             <i class="far fa-comment fa-2x"></i>
           </div>
-          <div class="info-action__reply-number">3</div>
+          <div class="info-action__reply-number"><%= @post.comments.count %></div>
           <%= render "posts/post_favorite", post: @post %>
           <%= render "posts/post_bookmark", post: @post %>
           <%= render "posts/post_delete", post: @post %>

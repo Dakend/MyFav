@@ -1,0 +1,2 @@
+document.getElementById('comment-content-<%= @comment.id %>').outerHTML = '';
+document.getElementById('comment-count').innerHTML = <%= @comment.post.comments.count %>;
