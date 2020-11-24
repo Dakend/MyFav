@@ -4,7 +4,7 @@
       Let's share your favorite things
     </div>
     <%= form_with model: @post_form, url: posts_path, class: "form" do |f| %> 
-      <div class="errors" id="errors"></div>
+      <div class="post-form-errors" id="post-form-errors"></div>
       <hr>
       <div class="form-group">
         <%= f.text_field :post_title, class: 'form-control', placeholder: "post_title" %>

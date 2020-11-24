@@ -1,0 +1,13 @@
+<div class="comment-content" id="comment-content-<%= comment.id%>">
+  <div class="comment-content__icon">
+    <img src="https://picsum.photos/201/301" class="comment-form__icon-img">
+   </div>
+  <div class="comment-content__main">
+    <div class="comment-info">
+      <span class="comment-info__username"><%= comment.user.name %></span>
+      <span class="comment-info__date">・3日前</span>
+      <%= render "comments/comment_delete", comment: comment %>
+    </div>
+    <div class="comment-content__main-txt"><%= comment.content %></div>
+  </div>
+</div>

@@ -3,7 +3,7 @@
     <%= render 'shared/post_content', post: @post %>
   </div>
   <div class="post-show-section-2">
-    <%= render 'posts/post_comment' %>
+    <%= render 'posts/post_comment', comments: @comments, comment: @comment, post: @post %>
   </div>
   <div class="post-show-section-3">
     <div class="post-related-container">

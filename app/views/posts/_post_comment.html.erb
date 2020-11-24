@@ -1,60 +1,24 @@
 <div class="post-comment-container">
-  <div class="comment-header">5件のコメント</div>
-  <div class="comment-form">
-    <div class="comment-form__icon"></div>
-    <div class="comment-form__main">
-      <textarea rows="1" placeholder="コメントを入力..."></textarea>
-      <button></button>
-    </div>
+  <div class="comment-header">
+    <span class="comment-header__count" id="comment-count"><%= comments.count %></span>
+    <span class="comment-header__txt">件のコメント</span>
   </div>
-  <div class="comment-content">
-    <div class="comment-content__icon"></div>
-    <div class="comment-content__main">
-      <div class="comment-info">
-        <div class="comment-nfo__username">Duck</div>
-        <div class="comment-info__date">・3日前</div>
+  <% if user_signed_in? %>
+    <div class="comment-errors" id="comment-errors"></div>
+    <div class="comment-form" id="comment-form">
+      <div class="comment-form__icon">
+        <img src="https://picsum.photos/200/300" class="comment-form__icon-img">
       </div>
-      <div class="comment-content__main-txt">Damn, GC know how to better showcase this bass than Fender themselves! <br>Don't think Fender did their artist any justice in that video</div>
-    </div>
-  </div>
-  <div class="comment-content">
-    <div class="comment-content__icon"></div>
-    <div class="comment-content__main">
-      <div class="comment-info">
-        <div class="comment-nfo__username">Duck</div>
-        <div class="comment-info__date">・3日前</div>
+      <div class="comment-form__main">
+        <%= form_with model: comment, class: "post-comment-form", url: post_comments_path(post) do |f| %> 
+          <%= f.hidden_field :post_id, value: post.id %>
+          <%= f.text_area :content, class: "post-comment-form__body", id: "post-comment-form-body",  placeholder: "コメントを入力...", rows: 1, required: true %>
+          <%= f.submit "コメント", class: "post-comment-form__btn" %>
+        <% end %>
       </div>
-      <div class="comment-content__main-txt">Damn, GC know how to better showcase this bass than Fender themselves!  <br>Don't think Fender did their artist any justice in that video</div>
     </div>
-  </div>
-  <div class="comment-content">
-    <div class="comment-content__icon"></div>
-    <div class="comment-content__main">
-      <div class="comment-info">
-        <div class="comment-nfo__username">Duck</div>
-        <div class="comment-info__date">・3日前</div>
-      </div>
-      <div class="comment-content__main-txt">Damn, GC know how to better showcase this bass than Fender themselves!  <br>Don't think Fender did their artist any justice in that video</div>
-    </div>
-  </div>
-  <div class="comment-content">
-    <div class="comment-content__icon"></div>
-    <div class="comment-content__main">
-      <div class="comment-info">
-        <div class="comment-nfo__username">Duck</div>
-        <div class="comment-info__date">・3日前</div>
-      </div>
-      <div class="comment-content__main-txt">Damn, GC know how to better showcase this bass than Fender themselves! Don't think Fender did their artist any justice in that video</div>
-    </div>
-  </div>
-  <div class="comment-content">
-    <div class="comment-content__icon"></div>
-    <div class="comment-content__main">
-      <div class="comment-info">
-        <div class="comment-nfo__username">Duck</div>
-        <div class="comment-info__date">・3日前</div>
-      </div>
-      <div class="comment-content__main-txt">Damn, GC know how to better showcase this bass than Fender themselves! Don't think Fender did their artist any justice in that video</div>
-    </div>
-  </div>
+  <% end %>
+  <% comments.each do |comment| %>
+    <%= render 'comments/comment_content', comment: comment %>
+  <% end %>
 </div>

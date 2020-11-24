@@ -27,10 +27,6 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :user_id, presence: true
 
-  def username
-    User.find(self.user_id).name
-  end
-
   def is_bookmarked_by?(user)
     self.bookmarks.where(user_id: user.id).exists?
   end

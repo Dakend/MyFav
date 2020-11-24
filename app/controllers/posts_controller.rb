@@ -18,6 +18,8 @@ class PostsController < ApplicationController
   def show
     @post_form = PostForm.new
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   private
