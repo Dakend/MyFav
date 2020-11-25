@@ -1,18 +1,24 @@
 <div class="post-show-container">
-  <div class="post-show-section-1">
-    <%= render 'shared/post_content', post: @post %>
+  <div class="post-show-section-main">
+    <div class="post-show-section-main__info">
+      <%= render "posts/post_show_info" %>
+    </div>
+    <div class="post-show-section-main__article">
+      <%= render "posts/post_show_article" %>
   </div>
-  <div class="post-show-section-2">
-    <%= render 'posts/post_comment', comments: @comments, comment: @comment, post: @post %>
   </div>
-  <div class="post-show-section-3">
-    <div class="post-related-container">
-      <div class="related-header">関連</div>
-      <div class="related-content">
-        <%= render 'shared/post_head_content', post: @post %>
-        <%= render 'shared/post_head_content', post: @post %>
-        <%= render 'shared/post_head_content', post: @post %>
-      </div>
+  <div class="post-show-section-comment">
+    <%= render 'posts/post_comment' %>
+  </div>
+  <div class="post-show-section-link">
+    <%= link_to "投稿一覧に戻る", root_path, class: "post-show-section-link__block" %>
+  </div>
+  <div class="post-show-section-relation">
+    <div class="post-show-section-relation__content">
+      <%= render 'shared/post_head_content', post: @post %>
+      <%= render 'shared/post_head_content', post: @post %>
+      <%= render 'shared/post_head_content', post: @post %>
+      <%= render 'shared/post_head_content', post: @post %>
     </div>
   </div>
 </div>

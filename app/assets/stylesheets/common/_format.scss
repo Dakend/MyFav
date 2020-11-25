@@ -4,3 +4,8 @@
     justify-content: center;
     text-align: $position;
 }
+@mixin just-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

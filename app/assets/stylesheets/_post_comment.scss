@@ -69,16 +69,16 @@
                     display: block;
                     width: 80px;
                     height: 25px;
-                    background-color: $sub-color;
-                    color: #fff;
                     font-size: 0.8rem;
-                    font-weight: bold;
-                    border-radius: 5px;
                     border-style: none;
+                    color: #fff;
+                    background-color: $sub-color;
                     cursor: pointer;
                     margin: 7px 0 0 auto;
                     &:hover {
-                        @include bg-main-color;
+                        @include border-main-color(1px);
+                        background-color: #fff;
+                        color: #000;
                     }
                 }
             }

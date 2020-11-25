@@ -1,5 +1,5 @@
 $mian-color: linear-gradient(100deg, #ff2846 25%, #ff7a5a 100%);
-$sub-color:  #d0d0d0;
+$sub-color: #c0c0c0;
 
 @mixin bg-main-color {
     background: $mian-color;
@@ -10,7 +10,18 @@ $sub-color:  #d0d0d0;
     border-image: $mian-color;
     border-image-slice: 1;
 }
-
+@mixin border-main-color-top-bottom($px: 2px) {
+    border-top: $px solid;
+    border-bottom: $px solid;
+    border-image: $mian-color;
+    border-image-slice: 1;
+}
+@mixin border-main-color-left-right($px: 2px) {
+    border-right: $px solid;
+    border-left: $px solid;
+    border-image: $mian-color;
+    border-image-slice: 1;
+}
 @mixin border-sub-color($px: 2px) {
     border: $px solid $sub-color;
 }
