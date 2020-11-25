@@ -1,0 +1,9 @@
+<div class="post-show-content">
+  <div class="post-show-content__ttl"><%= movie.title %></div>
+  <div class="post-show-content__img">
+    <a href=<%= movie.link %> target="_blank"> 
+      <img class="post-show-content__img-cont" src=<%= movie.image %>>
+    </a>
+  </div>
+  <div class="post-show-content__txt"><%= simple_format movie.content %></div>
+</div>

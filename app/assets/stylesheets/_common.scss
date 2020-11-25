@@ -33,31 +33,55 @@ body {
 }
 
 .post-show-container {
-    .post-show-section-line {
-        margin: 5px;
+    display: flex;
+    flex-direction: column;
+    .post-show-section-main {
+        width: 100%;
+        display: flex;
+        &__info {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 40px;
+        }
+        &__article {
+            width: 50%;
+            margin-left: 40px;
+        }
     }
-    .post-show-section-1 {
+    .post-show-section-comment {
+        width: 100%;
+    }
+    .post-show-section-link {
+        width: 100%;    
+        height: 280px;
+        margin-top: 50px;
+        border: 1px solid $sub-color;
+        border-style: solid none;
+        @include just-block;
+        &__block {
+            width: 400px;
+            height: 60px;
+            border: 1px solid $sub-color;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            @include just-text;
+            &:hover {
+                @include border-main-color(1px);
+            }
+        }
+    }
+    .post-show-section-relation {
+        width: 100%;    
+        height: 350px;
         background-color: #f0f0f0;
-    }
-    .post-show-section-2 {
-        background-color: #fcfcfc;
-        margin: 0 auto;
-    }
-    .post-show-section-3 {
-        background-color: #f0f0f0;
-        .post-related-container {
-            width: 75%;
+        @include just-block;
+        &__content {
+            width: 80%;
             margin: 0 auto;
-            .related-header {
-                height: 2rem;
-                padding-top: 20px;
-                font-size: 1.1rem;
-                width: 100%;
-            }
-            .related-content {
-                display: flex;
-                justify-content: space-around;
-            }
+            display: flex;
+            justify-content: space-around;
         }
     }
 }

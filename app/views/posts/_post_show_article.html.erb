@@ -1,0 +1,16 @@
+<div class="post-show-article-container">
+  <div class="post-show-content-article">
+    <div class="post-show-content-article__head">
+      <div class="post-show-content-article__head-ttl"><%= @post.title %></div>
+      <div class="post-show-content-article__head-info">
+        <img src="https://picsum.photos/200/300" class="post-show-content-article__head-info-icon">
+        <div class="post-show-content-article__head-info-username"><%= @post.user.name %></div>
+        <div class="post-show-content-article__head-info-date">2020/12/01</div>
+      </div>
+      <div class="post-show-content-article__head-txt"><%= simple_format @post.content %></div>
+    </div>
+    <% @post.movies.each do |movie| %>
+      <%= render "posts/post_show_content", movie: movie %>
+    <% end %>
+  </div>
+</div>

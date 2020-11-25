@@ -1,0 +1,19 @@
+<div class="post-show-info-container">
+  <div class="post-show-content-head">
+    <div class="post-show-content-head__card-flame">
+      <% @post.movies.each do |movie| %>
+          <img class="post-show-content-head__card-flame-img" src=<%= movie.image %>>
+      <% end %>
+    </div>
+    <div class="post-show-content-head__info">
+        <div class="post-show-content-head__info-reply-logo">
+            <i class="far fa-comment"></i>
+        </div>
+        <div class="post-show-content-head__info-reply-number"><%= @post.comments.count %></div>
+        <%= render "posts/post_favorite", post: @post %>
+        <%= render "posts/post_bookmark", post: @post %>
+        <%= render "posts/post_delete", post: @post %>
+    </div>
+    <div class="post-show-content-head__relation"></div>
+  </div>
+</div>
