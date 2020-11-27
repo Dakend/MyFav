@@ -27,14 +27,14 @@
     transform: translate(-50%, -50%) scale(0.8);
     background-color: #fff;
     padding: 20px;
-    @include border-sub-color(8px);
-    border-radius: 20px;
+    @include border-sub-color(5px);
+    border-radius: 5px;
     min-width: 500px;
     z-index: 2;
     opacity: 0;
     visibility: hidden;
     transition: 0.2s;
-    width: 400px;
+    width: 800px;
     height: 700px;
     overflow: hidden;
     overflow-y: scroll;
@@ -106,7 +106,7 @@
                     border-color: red;
                     outline: none;
                     &-within {
-                        transform: scale(1.1, 1.1);
+                        transform: scale(1.02, 1.02);
                     }
                     &+.form-label {
                         transform: translateY(-3.3em);
@@ -124,12 +124,13 @@
             }
             .form-control-area {
                 @extend .form-control;
+                height: 70px;
                 border: 2px solid #ccc;
                 &:focus + .form-label {
-                    transform: translateY(-5.1em);
+                    transform: translateY(-7.7em);
                 }
                 &:not(:placeholder-shown) + .form-label {
-                    transform: translateY(-5.1em);
+                    transform: translateY(-7.7em);
                 }
             }
         }
@@ -147,7 +148,7 @@
                 color: #fff;
                 font-size: 1em;
                 font-weight: bold;
-                border-radius: 15px;
+                border-radius: 10px;
                 border-style: none;
                 cursor: pointer;
                 &:hover {
@@ -163,7 +164,7 @@
                 color: #fff;
                 font-size: 1em;
                 font-weight: bold;
-                border-radius: 15px;
+                border-radius: 10px;
                 cursor: pointer;
                 @include just-text;
                 &:hover {
