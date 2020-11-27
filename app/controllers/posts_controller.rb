@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
-    binding.pry
+    # binding.pry
     @post_form = PostForm.new(post_params)
     if @post_form.save
       @new_post = Post.where(user_id: current_user.id).order(updated_at: :desc).limit(1).first
