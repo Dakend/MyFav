@@ -67,6 +67,7 @@ class Post < ApplicationRecord
         end
       else
         exit
+      end
     end
 
 end

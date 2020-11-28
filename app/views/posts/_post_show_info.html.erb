@@ -14,6 +14,12 @@
         <%= render "posts/post_bookmark", post: @post %>
         <%= render "posts/post_delete", post: @post %>
     </div>
-    <div class="post-show-content-head__relation"></div>
+    <div class="post-show-content-head__relation">
+      <div class="post-show-content-head__relation-tag">
+        <% @post.tags.each do |tag| %>
+          <span>#<%= tag.name %></span>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
