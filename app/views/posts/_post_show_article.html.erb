@@ -10,7 +10,9 @@
       <div class="post-show-content-article__head-txt">
         <%= simple_format @post.content %>
         <% @post.tags.each do |tag| %>
-          <div class="post-tag">#<%= tag.name %></div>
+          <%= link_to tag_path(tag) do %>
+            <div class="post-tag">#<%= tag.name %></div>
+          <% end %>
         <% end %>
       </div>
     </div>

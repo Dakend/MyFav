@@ -17,7 +17,9 @@
     <div class="post-show-content-head__relation">
       <div class="post-show-content-head__relation-tag">
         <% @post.tags.each do |tag| %>
-          <span>#<%= tag.name %></span>
+          <%= link_to tag_path(tag) do %>
+            <div class="post-tag">#<%= tag.name %></div>
+          <% end %>
         <% end %>
       </div>
     </div>

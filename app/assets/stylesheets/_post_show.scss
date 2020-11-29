@@ -102,8 +102,11 @@
             margin: 0 auto;
             @include just-text(left);
             &-tag {
-                color: #1d59be;
-                margin-left: 15px;
+                display: flex;
+                .post-tag {
+                    color: #1d59be;
+                    margin-left: 15px;
+                }
             }
         }
     }

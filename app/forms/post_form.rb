@@ -8,7 +8,7 @@ class PostForm
                 :movie_link_4, :movie_content_4,
                 :user_id
   
-  validates :post_title, presence: true, length: { maximum: 50 }
+  validates :post_title, presence: true, length: { maximum: 30 }
   validates :post_content, length: { maximum: 400 }
   validates :movie_link_1, presence: true
   validates :movie_link_2, presence: true
