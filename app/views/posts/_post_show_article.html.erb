@@ -7,7 +7,14 @@
         <div class="post-show-content-article__head-info-username"><%= @post.user.name %></div>
         <div class="post-show-content-article__head-info-date">2020/12/01</div>
       </div>
-      <div class="post-show-content-article__head-txt"><%= simple_format @post.content %></div>
+      <div class="post-show-content-article__head-txt">
+        <%= simple_format @post.content %>
+        <% @post.tags.each do |tag| %>
+          <%= link_to tag_path(tag) do %>
+            <div class="post-tag">#<%= tag.name %></div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <% @post.movies.each do |movie| %>
       <%= render "posts/post_show_content", movie: movie %>
