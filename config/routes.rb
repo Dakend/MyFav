@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'favorites/destroy'
   root 'top#index'
   devise_for :users
-  # resources :users, except: [:index]
+  resources :users, only: [:show, :update]
   resources :tags, only: [:show]
   resources :posts, only: [:create, :destroy, :show] do
     resource :bookmarks, only: [:create, :destroy]

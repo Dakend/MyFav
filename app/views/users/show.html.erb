@@ -1,0 +1,7 @@
+<%= form_with model: @user, class: "form" do |f| %> 
+  <div class="field">
+     <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.submit 'Update' %>
+  </div>
+<% end %>

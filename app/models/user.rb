@@ -6,6 +6,7 @@
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
 #  name                   :string(255)
+#  profile                :string(255)
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string(255)
@@ -27,5 +28,8 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  validates :name, presence: true
+  validates :profile, length: { maximum: 160 } 
 
 end
