@@ -1,7 +1,35 @@
-<%= form_with model: @user, class: "form" do |f| %> 
-  <div class="field">
-     <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.submit 'Update' %>
+<div class="user-show-container">
+  <div class="user-profile-container">
+    <%= render 'users/user_profile_content', user: @user %>
   </div>
-<% end %>
+  <div class="user-post-container">
+    <div class="user-post-tabs">
+      <input id="posts" type="radio" name="tab-item" checked>
+      <label class="tab-item" for="posts">Posts</label>
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <input id="bookmarks" type="radio" name="tab-item">
+        <label class="tab-item" for="bookmarks">Bookmarks</label>
+      <% end %>
+      <div class="tab-content" id="posts-content">
+        <div class="tab-content__description">
+          <div class="post-head-container">
+            <% @user.posts.each do |post| %>
+              <%= render 'shared/post_head_content', post: post %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <div class="tab-content" id="bookmarks-content">
+          <div class="tab-content__description">
+            <div class="post-head-container">
+              <% @user.bookmark_posts.each do |post| %>
+                <%= render 'shared/post_head_content', post: post %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
