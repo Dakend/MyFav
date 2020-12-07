@@ -1,0 +1,60 @@
+@import 'common/color';
+@import 'common/format';
+
+.user-post-tabs {
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.6);
+    width: 900px;
+    margin: 0 auto;
+    .tab-item {
+        width: calc(100%/2);
+        height: 50px;
+        background-color: #fff;
+        line-height: 50px;
+        font-size: 1.1rem;
+        text-align: center;
+        color: #565656;
+        display: block;
+        float: left;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
+    .tab-item:hover {
+        opacity: 0.85;
+    }
+    input[name="tab-item"] {
+        display: none;
+    }
+    .tab-content {
+        display: none;
+        padding: 40px 40px 0;
+        clear: both;
+        overflow: hidden;
+        &__container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            &::before {
+                content: "";
+                display: block;
+                width: 300px;
+                order: 1;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 300px;
+            }
+        }
+    }
+    #posts:checked ~ #posts-content,
+    #bookmarks:checked ~ #bookmarks-content {
+        display: block;
+    }
+    input:checked + .tab-item {
+        @include bg-main-color;
+        color: #fff;
+    }
+}

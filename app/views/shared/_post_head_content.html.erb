@@ -9,14 +9,12 @@
     </div>
     <div class="post-card__info">
       <div class="info-header">
-        <img class="info-header__icon" src="https://picsum.photos/190/190" alt="">
+        <%= image_tag post.user.icon, class: "info-header__icon" %>
         <div class="info-header__ttl"><%= post.title %></div>
       </div>
       <div class="info-detail">
         <div class="section-1">
-          <div class="section-1__favorite-logo">
-            <i class="fas fa-heart"></i>
-          </div>
+          <div class="section-1__favorite-logo"><i class="fas fa-heart"></i></div>
           <div class="section-1__favorite-number"><%= post.favorites.count %></div>
           <div class="section-1__username"><%= post.user.name %></div>
         </div>

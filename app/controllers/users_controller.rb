@@ -8,13 +8,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
+    # binding.pry
     @user = User.find(params[:id])
     @user.update(user_params)
   end
 
   private
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:icon, :name, :profile)
     end
 end
