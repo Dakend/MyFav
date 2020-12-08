@@ -21,7 +21,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  before_create :default_image
+  before_create :default_icon
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -36,9 +36,9 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 160 }
 
   private
-    def default_image
-      if !self.image.attached?
-        self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'event_default.png')), filename: 'default-image.png', content_type: 'image/png')
+    def default_icon
+      if !self.icon.attached?
+        self.icon.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default-image.jpg')), filename: 'default-image.jpg', content_type: 'image/jpg')
       end
     end
 

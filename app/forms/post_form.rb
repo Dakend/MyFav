@@ -26,6 +26,7 @@ class PostForm
     return false unless valid?
     # binding.pry
     post = Post.new(title: post_title, content: post_content, user_id: user_id)
+    # binding.pry
     post.save
     post.movies.create(image: "https://picsum.photos/210/310", 
                                 link: movie_link_1,

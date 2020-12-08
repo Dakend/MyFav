@@ -2,15 +2,14 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:update]
   
   def show
-    # @user = current_user
-    # binding.pry
     @user = User.find(params[:id])
+    @post_form = PostForm.new
   end
 
   def update
-    # binding.pry
     @user = User.find(params[:id])
     @user.update(user_params)
+    redirect_to @user, notice: "プロフィールを更新しました。"
   end
 
   private

@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', () => {
-
+    
     if (document.querySelectorAll('label.tab-item').length == 1) {
         document.getElementsByClassName('tab-item')[0].style.width = '100%';
     }
