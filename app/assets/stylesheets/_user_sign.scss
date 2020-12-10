@@ -1,0 +1,123 @@
+@import 'common/color';
+@import 'common/format';
+
+.modal-sign-form {
+    width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    .sign-container {
+        width: 700px;
+        height: 400px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        .signup-section {
+            width: 40%;
+            &__header {
+                height: 100px;
+                &-ttl {
+                    margin: 0;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                &-txt {
+                    font-size: 0.8rem;
+                }
+            }
+            &__img {
+                height: 200px;
+            }
+            &__btn {
+                height: 55px;
+                border-radius: 10px;
+                @include bg-main-color;
+                @include just-text;
+                color: #fff;
+                &:hover {
+                    background: #fff;
+                    color: #000000;
+                    border: 1px solid red;
+                    margin: -1px;
+                }
+            }
+        }
+        .login-section {
+            width: 40%;
+            &__header {
+                height: 100px;
+                &-ttl {
+                    margin: 0;
+                    font-weight: bold;
+                    text-align: center;
+                    border-bottom: 1px solid $sub-color;
+                    padding-bottom: 20px;
+                }
+            }
+            &__form {
+                height: 300px;
+                .form-input {
+                    height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    &__mail, &__pass {
+                        height: 50px;
+                        border: 1px solid $sub-color;
+                        border-radius: 10px;    
+                        margin-top: 20px;
+                        @include just-block;
+                        .form-flame {
+                            display: flex;
+                            &__icon {
+                                width: 40px;
+                                height: 40px;
+                                @include just-text;
+                                font-size: 1.3rem;
+                                color: $sub-color;
+                            }
+                            &__cont {
+                                width: 220px;
+                                border-style: none;
+                                font-size: 1.02rem;
+                                &:focus {
+                                    box-shadow: none;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                    &__txt {
+                        height: 20px;
+                        font-size: 0.75rem;
+                        display: flex;
+                        margin-top: 5px;
+                        &__icon {
+
+                        }
+                        &__cont {
+
+                        }
+                    }
+                }
+                .form-submit {
+                    &__btn {
+                        height: 55px;
+                        width: 100%;
+                        border-radius: 10px;
+                        @include bg-main-color;
+                        color: #fff;
+                        border-style: none;
+                        font-size: 1rem;
+                        &:hover {
+                            background: #fff;
+                            color: #000000;
+                            border: 1px solid red;
+                            margin: -1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

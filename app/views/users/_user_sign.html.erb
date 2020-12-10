@@ -1,0 +1,48 @@
+<%# <div id="modal-sign-open" class="modal-sign-open">Post</div> %>
+<div class="modal-sign-form">
+  <i id="modal-sign-form-cancel" class="fas fa-times modal-sign-cancel" ></i>
+  <div class="sign-container">
+    <div class="signup-section">
+      <div class="signup-section__header">
+          <p class="signup-section__header-ttl">アカウントをお持ちでない方</p>
+          <p class="signup-section__header-txt">新登録していただくと、さらに便利な機能をご利用いただけます。</p>
+      </div>
+      <div class="signup-section__img"></div>
+      <div class="signup-section__btn">新規登録</div>
+    </div>
+      <div class="login-section">
+        <div class="login-section__header">
+            <p class="login-section__header-ttl">ログイン</p>
+        </div>
+        <div class="login-section__form">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-input">
+              <div class="form-input__mail">
+                <div class="form-flame">
+                  <div class="form-flame__icon"><i class="fas fa-user"></i></div>    
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-flame__cont", placeholder: "メールアドレス" %>
+                </div>
+              </div>
+              <div class="form-input__pass">
+                <div class="form-flame">
+                  <div class="form-flame__icon"><i class="fas fa-lock"></i></div>    
+                    <%= f.password_field :password, autocomplete: "current-password", class: "form-flame__cont", placeholder: "パスワード" %>
+                </div>
+              </div>
+              <% if devise_mapping.rememberable? %>
+                <div class="form-input__txt">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end %>
+            </div>
+            <div class="form-submit">
+              <%= f.submit "ログイン", class: "form-submit__btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal-sign-mask" class="modal-sign-mask"></div>
