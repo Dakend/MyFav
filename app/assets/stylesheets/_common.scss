@@ -3,10 +3,17 @@
 
 body {
     margin: 0 auto;
+    background-color: #f0f0f0;
 }
 
 .wrapper {
     margin: 70px auto 0;
+}
+
+.user-sign-container {
+    height: 700px;
+    background-color: #f0f0f0;
+    @include just-block;
 }
 
 .post-top-container {
@@ -15,6 +22,7 @@ body {
 
 .post-head-container {
     width: 80%;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +45,7 @@ body {
 }
 
 .post-show-container {
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     .post-show-section-main {
@@ -89,3 +98,17 @@ body {
         }
     }
 }
+.user-show-container {
+    // background-color: #f0f0f0;
+    .user-profile-container {
+        width: 100%;
+        height: 300px;
+        background-color: #f0f0f0;
+        @include just-block;
+    }
+    
+    .user-post-container {
+        background: #f0f0f0;
+    }
+}
+

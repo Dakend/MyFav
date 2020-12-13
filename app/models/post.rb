@@ -44,10 +44,14 @@ class Post < ApplicationRecord
     #投稿記事からハッシュタグを抽出、検出した場合は配列に格納、投稿記事からハッシュタグを削除
     def get_tag_and_remove_tag
       @tags  = self.content.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
-      @tags.each do |tag|
-        self.content.gsub!(tag, "")
+      if @tags.any?
+        @tags.each do |tag|
+          self.content.gsub!(tag, "")
+        end
+        self.content.strip!
+      else
+        return
       end
-      self.content.strip!
     end
 
     #ハッシュタグをTagモデルとPostモデルへ紐付け
@@ -66,7 +70,7 @@ class Post < ApplicationRecord
           post.tags << tag_obj
         end
       else
-        exit
+        return
       end
     end
 

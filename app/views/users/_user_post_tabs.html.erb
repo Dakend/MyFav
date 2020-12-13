@@ -1,0 +1,24 @@
+<div class="user-post-tabs">
+  <input id="posts" type="radio" name="tab-item" checked>
+  <label class="tab-item" for="posts">Posts</label>
+  <% if user_signed_in? && current_user.id == user.id %>
+    <input id="bookmarks" type="radio" name="tab-item">
+    <label class="tab-item" for="bookmarks">Bookmarks</label>
+  <% end %>
+  <div class="tab-content" id="posts-content">
+    <div class="tab-content__container">
+      <% user.posts.each do |post| %>
+        <%= render 'shared/post_head_content', post: post %>
+      <% end %>
+    </div>
+  </div>
+  <% if user_signed_in? && current_user.id == user.id %>
+    <div class="tab-content" id="bookmarks-content">
+      <div class="tab-content__container">
+        <% user.bookmark_posts.each do |post| %>
+          <%= render 'shared/post_head_content', post: post %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

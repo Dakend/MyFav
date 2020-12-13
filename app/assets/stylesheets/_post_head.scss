@@ -102,6 +102,7 @@
                 height: 20px;
                 &__date {
                     width: 100px;
+                    color: #ff0033;
                     @include just-text(left);
                     margin-left: 55px;
                 }

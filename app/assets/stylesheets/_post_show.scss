@@ -124,26 +124,29 @@
                 font-size: 1.5rem;
                 font-weight: bold;
                 @include just-text;
-                &:hover {
-                    @include border-main-color-top-bottom;
-                }
             }
             &-info {
                 height: 80px;
                 display: flex;
                 &-icon {
-                    @include bg-main-color;
-                    height: 60px;
-                    width: 60px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    display: block;
                     margin: auto 0 auto 30px;
+                    &-img {
+                        @include bg-main-color;
+                        height: 60px;
+                        width: 60px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    
                 }
                 &-username {
                     @include just-text;
                     margin-left: 15px;
                     font-size: 1.1rem;
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
                 }
                 &-date {
                     @include just-text;

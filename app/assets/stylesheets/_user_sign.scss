@@ -1,0 +1,274 @@
+@import 'common/color';
+@import 'common/format';
+
+
+.sign-container {
+    width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    @include just-block;
+    .sign-content {
+        width: 700px;
+        height: 360px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        .signup-section {
+            width: 40%;
+            &__header {
+                height: 100px;
+                &-ttl {
+                    margin: 0;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                &-txt {
+                    font-size: 0.8rem;
+                }
+            }
+            &__img {
+                height: 200px;
+            }
+            &__btn {
+                height: 55px;
+                border-radius: 10px;
+                @include bg-main-color;
+                @include just-text;
+                text-decoration: none;
+                color: #fff;
+                &:hover {
+                    background: #fff;
+                    color: #000000;
+                    border: 1px solid red;
+                    margin: -1px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .login-section {
+            width: 40%;
+            &__header {
+                height: 40px;
+                &-ttl {
+                    margin: 0;
+                    font-weight: bold;
+                    text-align: center;
+                    border-bottom: 1px solid $sub-color;
+                    padding-bottom: 10px;
+                }
+            }
+            &__form {
+                .form-input {
+                    height: 260px;
+                    display: flex;
+                    flex-direction: column;
+                    &__errors {
+                        height: 50px;
+                        margin-top: 20px;
+                        color: red;
+                        font-size: 0.75rem;
+                        @include just-text;
+                    }
+                    &__mail, &__pass {
+                        height: 50px;
+                        border: 1px solid $sub-color;
+                        border-radius: 10px;    
+                        margin-top: 20px;
+                        @include just-block;
+                        .form-flame {
+                            display: flex;
+                            &__icon {
+                                width: 40px;
+                                height: 40px;
+                                @include just-text;
+                                font-size: 1.3rem;
+                                color: $sub-color;
+                            }
+                            &__cont {
+                                width: 220px;
+                                border-style: none;
+                                font-size: 1.02rem;
+                                &:focus {
+                                    box-shadow: none;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                    &__txt {
+                        height: 20px;
+                        font-size: 0.75rem;
+                        display: flex;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        input[type="checkbox"]{
+                            display: none;
+                        }
+                        input[type="checkbox"]+label{
+                            display: none;
+                            cursor: pointer;
+                            display: inline-block;
+                            position: relative;
+                            padding-left: 22px;
+                            padding-right: 10px;
+                        }
+                        input[type="checkbox"]+label::before{
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            box-sizing: border-box;
+                            width: 15px;
+                            height: 15px;
+                            margin-top: -9px;
+                            left: 0;
+                            top: 50%;
+                            @include border-sub-color(1px);
+                        }
+                        input[type="checkbox"]:checked+label::after{
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            box-sizing: border-box;
+                            width: 15px;
+                            height: 9px;
+                            margin-top: -9px;
+                            top: 50%;
+                            left: 3px;
+                            transform: rotate(-45deg);
+                            border-bottom: 3px solid;
+                            border-left: 3px solid;
+                            border-color:  red;
+                        }
+                        label {
+                            color: gray;
+                        }
+                    }
+                }
+                .form-submit {
+                    &__btn {
+                        height: 55px;
+                        width: 100%;
+                        border-radius: 10px;
+                        @include bg-main-color;
+                        color: #fff;
+                        border-style: none;
+                        font-size: 1rem;
+                        &:hover {
+                            background: #fff;
+                            color: #000000;
+                            border: 1px solid red;
+                            margin: -1px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@mixin sign-content-component {
+    width: 300px;
+    height: 520px;
+    margin: auto;
+    &__header {
+        height: 60px;
+        &-ttl {
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid $sub-color;
+            padding-bottom: 10px;
+        }
+    }
+    &__form {
+        .form-input {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            &__errors {
+                height: 80px;
+                color: red;
+                font-size: 0.75rem;
+                padding-left: 30px;
+                @include just-text(left);
+            }
+            &__name, &__mail, &__password {
+                height: 50px;
+                border: 1px solid $sub-color;
+                border-radius: 10px;    
+                margin-top: 20px;
+                @include just-block;
+                .form-flame {
+                    display: flex;
+                    &__icon {
+                        width: 40px;
+                        height: 40px;
+                        @include just-text;
+                        font-size: 1.3rem;
+                        color: $sub-color;
+                    }
+                    &__cont {
+                        width: 220px;
+                        height: 40px;
+                        border-style: none;
+                        font-size: 1.02rem;
+                        &:focus {
+                            box-shadow: none;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+        .form-submit {
+            &__btn {
+                height: 55px;
+                width: 100%;
+                border-radius: 10px;
+                @include bg-main-color;
+                color: #fff;
+                border-style: none;
+                font-size: 1rem;
+                &:hover {
+                    background: #fff;
+                    color: #000000;
+                    border: 1px solid red;
+                    margin: -1px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.sign-up-container {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    @include just-block;
+    .sign-up-content {
+        @include sign-content-component;
+    }
+}
+
+.sign-edit-container {
+    width: 600px;
+    height: 650px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    @include just-block;
+    .sign-edit-content {
+        @include sign-content-component;
+        height: 600px;
+        .form-input {
+            height: 480px;
+        }
+    }
+}

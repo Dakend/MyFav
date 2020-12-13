@@ -1,0 +1,8 @@
+<div class="user-show-container">
+  <div class="user-profile-container">
+    <%= render 'users/user_profile_content', user: @user %>
+  </div>
+  <div class="user-post-container">
+    <%= render "users/user_post_tabs", user: @user %>
+  </div>
+</div>
