@@ -34,6 +34,10 @@
             margin-bottom: 10px;
             font-size: 0.95rem;
             padding-bottom: 5px;
+            p {
+                margin: 5px 0 5px 0;
+                color: #666666;
+            }
         }
         &__edit {
             width: 50px;
@@ -96,10 +100,10 @@
         transform: translate(-50%, -50%) scale(1);
     }
     .modal-profile-cancel {
-        font-size: 1.2rem;
-        cursor: pointer;
+        font-size: 1.1rem;
         &:hover {
             color: red;
+            cursor: pointer;
         }
     }
     &__header {
@@ -228,7 +232,7 @@
                 &:hover {
                     background: #fff;
                     color: #000000;
-                    border: 2px solid red;
+                    border: 1px solid red;
                 }
             }
         }

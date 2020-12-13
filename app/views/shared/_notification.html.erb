@@ -10,9 +10,9 @@
     setTimeout(() => {
             notificationContent.innerHTML = '';
             notification.style.visibility = 'hidden';
-    }, 4000);
+    }, 4500);
   };
-  <% if flash.any? %>
+  <% if flash[:notice] %>
     notice("<%= flash[:notice]%>");
   <% end %>
 </script>

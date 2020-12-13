@@ -4,7 +4,13 @@
   </div>
   <div class="profile-info">
     <div class="profile-info__name"><%= @user.name %></div>
-    <div class="profile-info__txt"><%= @user.profile %></div>
+    <div class="profile-info__txt">
+      <p>プロフィール</p>
+      <% if user_signed_in? && current_user.id == @user.id && !@user.profile %>
+        <span>変更ボタンからプロフィールを入力</span>
+      <% end %>
+      <%= @user.profile %>
+    </div>
     <% if user_signed_in? && current_user.id == @user.id %>
       <div id="profile-info-edit" class="profile-info__edit">変更</div>
     <% end %>
