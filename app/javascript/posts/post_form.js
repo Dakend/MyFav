@@ -20,7 +20,4 @@ document.addEventListener('turbolinks:load', () => {
         modalPostMask.classList.remove('active');
         scroll();
     });
-    formBtnPost.addEventListener('click', () => {
-        scroll();
-    });
 });

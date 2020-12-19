@@ -1,6 +1,6 @@
 <div class="comment-content" id="comment-content-<%= comment.id%>">
   <div class="comment-content__icon">
-    <img src="https://picsum.photos/201/301" class="comment-form__icon-img">
+    <%= link_to image_tag(@post.user.icon, class: "comment-form__icon-img"), user_path(@post.user.id) %>
    </div>
   <div class="comment-content__main">
     <div class="comment-info">

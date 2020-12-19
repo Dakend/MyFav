@@ -10,6 +10,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  post_id    :bigint           not null
+#  youtube_id :string(255)
 #
 # Indexes
 #
@@ -24,4 +25,5 @@ class Movie < ApplicationRecord
   validates :image, presence: true
   validates :link, presence: true
   validates :title, presence: true
+  validates :youtube_id, presence: true
 end
