@@ -22,28 +22,35 @@ class PostForm
     validates :movie_content_4
   end
 
+
   def save
     return false unless valid?
     # binding.pry
     post = Post.new(title: post_title, content: post_content, user_id: user_id)
     # binding.pry
     post.save
-    post.movies.create(image: "https://picsum.photos/210/310", 
-                                link: movie_link_1,
-                                title: Faker::Lorem.sentence(word_count: 2),
-                                content: movie_content_1)
-    post.movies.create(image: "https://picsum.photos/220/320", 
-                                link: movie_link_2,
-                                title: Faker::Lorem.sentence(word_count: 2),
-                                content: movie_content_2)
-    post.movies.create(image: "https://picsum.photos/230/330", 
-                                link: movie_link_3,
-                                title: Faker::Lorem.sentence(word_count: 2),
-                                content: movie_content_3)
-    post.movies.create(image: "https://picsum.photos/240/340", 
-                                link: movie_link_4,
-                                title: Faker::Lorem.sentence(word_count: 2),
-                                content: movie_content_4)
+    factory_movie(post)
+  end
+
+  private
+    def create_params(movie_link, movie_content)
+      movie_data = YoutubeData.new(movie_link)
+      params = {
+        image: movie_data.get_thumbnail,
+        link: movie_link,
+        title: movie_data.get_title,
+        content: movie_content,
+        youtube_id: movie_data.movie_id
+      }
+    end
+
+    def factory_movie(post)
+      movie_links = [movie_link_1, movie_link_2, movie_link_3, movie_link_4]
+      movie_contents = [movie_content_1, movie_content_2, movie_content_3, movie_content_4]
+      4.times {|num|
+        params = create_params(movie_links[num], movie_contents[num])
+        post.movies.create(params)
+      }
     end
 
 end

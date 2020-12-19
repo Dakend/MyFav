@@ -10,6 +10,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  post_id    :bigint           not null
+#  youtube_id :string(255)
 #
 # Indexes
 #
