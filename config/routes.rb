@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
   resources :users, only: [:show, :update]
   resources :tags, only: [:show]
+  resources :categories, only: [:show]
   resources :posts, only: [:create, :destroy, :show] do
     resource :bookmarks, only: [:create, :destroy]
     get :bookmarks, on: :collection

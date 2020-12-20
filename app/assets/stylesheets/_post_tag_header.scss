@@ -8,7 +8,13 @@
     display: flex;
     &__name {
         font-size: 1.4rem;
+        height: 23px;
         margin: 40px 0;
         @include just-text;
+        padding: 5px 10px;
+        color: #fff;
+        @include bg-main-color;
+        border-radius: 10px;
+        opacity: 0.9;
     }
 }

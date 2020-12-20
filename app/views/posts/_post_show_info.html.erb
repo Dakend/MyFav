@@ -15,10 +15,15 @@
         <%= render "posts/post_delete", post: @post %>
     </div>
     <div class="post-show-content-head__relation">
-      <div class="post-show-content-head__relation-tag">
+      <div class="relation-flame">
+        <% @post.categories.each do |category| %>
+          <%= link_to category_path(category) do %>
+            <div class="relation-flame__content"><%= category.name %></div>
+          <% end %>
+        <% end %>
         <% @post.tags.each do |tag| %>
           <%= link_to tag_path(tag) do %>
-            <div class="post-tag">#<%= tag.name %></div>
+            <div class="relation-flame__content">#<%= tag.name %></div>
           <% end %>
         <% end %>
       </div>

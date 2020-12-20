@@ -25,32 +25,49 @@ class PostForm
 
   def save
     return false unless valid?
-    # binding.pry
-    post = Post.new(title: post_title, content: post_content, user_id: user_id)
-    # binding.pry
-    post.save
-    factory_movie(post)
+    @post = Post.new(title: post_title, content: post_content, user_id: user_id)
+    @post.save
+    create_movies_and_category_relation
   end
 
   private
+  
+    def create_movies_and_category_relation
+      movie_links = [movie_link_1, movie_link_2, movie_link_3, movie_link_4]
+      movie_contents = [movie_content_1, movie_content_2, movie_content_3, movie_content_4]
+      @category_list = []
+      4.times {|num|
+        fetch_youtube_data(movie_links[num])
+        params = create_params(movie_links[num], movie_contents[num])
+        @post.movies.create(params)
+        add_movie_category_to_category_list
+      }
+      create_category_relation
+    end
+
+    def fetch_youtube_data(movie_link)
+      @movie_data = YoutubeData.new(movie_link)
+    end
+
     def create_params(movie_link, movie_content)
-      movie_data = YoutubeData.new(movie_link)
       params = {
-        image: movie_data.get_thumbnail,
+        image: @movie_data.get_thumbnail,
         link: movie_link,
-        title: movie_data.get_title,
+        title: @movie_data.get_title,
         content: movie_content,
-        youtube_id: movie_data.movie_id
+        youtube_id: @movie_data.movie_id
       }
     end
 
-    def factory_movie(post)
-      movie_links = [movie_link_1, movie_link_2, movie_link_3, movie_link_4]
-      movie_contents = [movie_content_1, movie_content_2, movie_content_3, movie_content_4]
-      4.times {|num|
-        params = create_params(movie_links[num], movie_contents[num])
-        post.movies.create(params)
-      }
+    def add_movie_category_to_category_list
+      @category_list << @movie_data.get_category
+    end
+
+    def create_category_relation
+      @category_list.uniq.each do |category|
+        category_obj = Category.find_or_create_by(name: category)
+        @post.categories << category_obj
+      end
     end
 
 end
