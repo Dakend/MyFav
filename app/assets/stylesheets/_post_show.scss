@@ -45,7 +45,7 @@
             border-radius: 15px;
             margin: 0 auto 30px auto;
             &-reply-logo {
-                color: #87cefa;
+                color: $sub-color;
                 @include just-text;
                 margin-left: 30px;
             }
@@ -53,12 +53,12 @@
                 @include just-text;
                 margin-left: 15px;
                 &-marked {
-                    color: #ff69b4;
+                    color: #ff9ccd;
                 }
                 &-nonmarked {
-                    color: #c0c0c0;
+                    color: $sub-color;
                     &:hover {
-                        color: #ff69b4;
+                        color: #ff9ccd;
                     }
                 }
             }
@@ -69,7 +69,7 @@
                     color: #ffd700;
                 }
                 &-nonmarked {
-                    color: #c0c0c0;
+                    color: $sub-color;
                     &:hover {
                         color: #ffd700;
                     }
@@ -86,7 +86,7 @@
                 @include just-text;
             }
             &-delete-logo {
-                color: #c0c0c0;
+                color: $sub-color;
                 @include just-text;
                 margin: 0 30px 0 auto;
                 &:hover {
@@ -101,11 +101,22 @@
             border-radius: 15px;
             margin: 0 auto 30px auto;
             @include just-text(left);
-            &-tag {
+            .relation-flame {
                 display: flex;
-                .post-tag {
-                    color: #1d59be;
+                &__content {
                     margin-left: 15px;
+                    padding: 2px 10px;
+                    color: #fff;
+                    font-size: 0.9rem;
+                    @include bg-main-color;
+                    border-radius: 10px;
+                    opacity: 0.7;
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+                a {
+                    text-decoration: none;
                 }
             }
         }
@@ -136,6 +147,9 @@
                         width: 60px;
                         border-radius: 50%;
                         object-fit: cover;
+                        &:hover {
+                            opacity: 0.9;
+                        }
                     }
                     
                 }
@@ -143,6 +157,9 @@
                     @include just-text;
                     margin-left: 15px;
                     font-size: 1.1rem;
+                    &:hover {
+                        opacity: 0.7;
+                    }
                     a {
                         text-decoration: none;
                         color: inherit;
@@ -160,6 +177,9 @@
                 .post-tag {
                     color: #1d59be;
                     text-decoration: underline;
+                    &:hover {
+                        opacity: 0.7;
+                    }
                 }
             }
         }
