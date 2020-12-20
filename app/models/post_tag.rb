@@ -24,4 +24,5 @@ class PostTag < ApplicationRecord
   belongs_to :tag
   validates :post_id, presence: true
   validates :tag_id, presence: true
+  validates_uniqueness_of :post_id, scope: :tag_id
 end
