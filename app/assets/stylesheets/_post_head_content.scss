@@ -1,0 +1,68 @@
+@import 'common/color';
+@import 'common/format';
+@import 'post_card';
+
+.post-head-container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    .post-head-label {
+        height: 100px;
+        @include just-block;
+        display: flex;
+        justify-content: space-between;
+        &__txt {
+            font-size: 1.2rem;
+            height: 25px;
+            margin: 40px 0;
+            @include just-text;
+            padding: 5px 10px;
+            color: #fff;
+            @include bg-main-color;
+            border-radius: 10px;
+            opacity: 0.9;
+        }
+        &__more {
+            font-size: 0.8rem;
+            height: 25px;
+            margin: 40px 0;
+            @include just-text;
+            padding: 5px 30px;
+            border: 1px solid $sub-color;
+            border-radius: 10px;
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                border: 1px solid red;
+            }
+        }
+    }
+    .post-head-block {
+        display: flex;
+        .post-card-block {
+            height: 270px;
+            width: 1100px;
+            border-radius: 15px;
+            display: flex;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            &::-webkit-scrollbar{
+                display:none;
+            }
+            .post-card {
+                @include post-card-template;
+                margin: auto 20px auto 0;
+            }
+        }
+        .scroll-right-btn, .scroll-left-btn {
+            @include just-text;
+            font-size: 1.5rem;
+            width: 50px;
+            &:hover {
+                color: red;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import 'common/color';
+@import 'common/format';
+@import 'post_card';
+
+.post-tag-header-container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    .post-tag-header {
+        &__name {
+            font-size: 1.4rem;
+            height: 23px;
+            margin: 40px 0;
+            @include just-text;
+            padding: 5px 10px;
+            color: #fff;
+            @include bg-main-color;
+            border-radius: 10px;
+            opacity: 0.9;
+        }
+    }
+}
+
+.post-tag-main-container {
+    width: 1200px;
+    margin: 0 auto;
+    .post-card {
+        @include post-card-template;
+        margin-bottom: 50px;
+    }
+}

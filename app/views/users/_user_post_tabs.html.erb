@@ -8,7 +8,7 @@
   <div class="tab-content" id="posts-content">
     <div class="tab-content__container">
       <% user.posts.each do |post| %>
-        <%= render 'shared/post_head_content', post: post %>
+        <%= render 'shared/post_card', post: post %>
       <% end %>
     </div>
   </div>
@@ -16,7 +16,7 @@
     <div class="tab-content" id="bookmarks-content">
       <div class="tab-content__container">
         <% user.bookmark_posts.each do |post| %>
-          <%= render 'shared/post_head_content', post: post %>
+          <%= render 'shared/post_card', post: post %>
         <% end %>
       </div>
     </div>

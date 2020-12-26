@@ -1,9 +1,9 @@
 <div class="post-show-content-head__info-favorite-logo" id="post-favorite-logo-<%= post.id %>">
   <% if user_signed_in? && !(current_user.id == post.user_id) %>
     <% if post.is_favorited_by?(current_user) %> 
-      <%= render 'posts/favorited', post: post %>
+      <%= render 'favorites/favorited', post: post %>
     <% else %>
-      <%= render 'posts/non_favorited', post: post %>
+      <%= render 'favorites/non_favorited', post: post %>
     <% end %>
   <% else %>
     <div class="post-show-content-head__info-favorite-logo-marked">

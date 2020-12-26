@@ -1,11 +1,11 @@
 <div class="comment-content" id="comment-content-<%= comment.id%>">
   <div class="comment-content__icon">
-    <%= link_to image_tag(@post.user.icon, class: "comment-form__icon-img"), user_path(@post.user.id) %>
+    <%= link_to image_tag(comment.user.icon, class: "comment-form__icon-img"), user_path(comment.user) %>
    </div>
   <div class="comment-content__main">
     <div class="comment-info">
       <span class="comment-info__username"><%= comment.user.name %></span>
-      <span class="comment-info__date">・3日前</span>
+      <span class="comment-info__date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
       <%= render "comments/comment_delete", comment: comment %>
     </div>
     <div class="comment-content__main-txt"><%= comment.content %></div>

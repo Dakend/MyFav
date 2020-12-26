@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   def show
     @post_form = PostForm.new
     @post = Post.find(params[:id])
+    @posts = Post.limit(10)
     @comment = Comment.new
     @comments = @post.comments
   end

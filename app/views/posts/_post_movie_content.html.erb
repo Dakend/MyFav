@@ -1,0 +1,7 @@
+<div class="post-movie-content">
+  <div class="post-movie-content__ttl"><%= movie.title %></div>
+  <div class="post-movie-content__img">
+    <iframe class="post-movie-content__img-cont" type="text/html" src="https://www.youtube.com/embed/<%= movie.youtube_id%>" frameborder="0"></iframe>
+  </div>
+  <div class="post-movie-content__txt"><%= simple_format movie.content %></div>
+</div>

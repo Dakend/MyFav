@@ -1,8 +1,57 @@
 @import 'common/color';
 @import 'common/format';
 
+.post-show-main-container {
+    width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    .post-main-infomation {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 40px;
+    }
+    .post-main-article {
+        width: 50%;
+        margin-left: 40px;
+    }
+}
+.post-show-comment-container {
+    width: 1200px;
+    margin: 0 auto 50px auto;
+}
+.post-show-link-container {
+    width: 100%;  
+    height: 280px;
+    border: 1px solid $sub-color;
+    border-style: solid none;
+    @include just-block;
+    .post-show-link {
+        &__block {
+            width: 400px;
+            height: 60px;
+            border: 1px solid $sub-color;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            @include just-text;
+            &:hover {
+                @include border-main-color(1px);
+            }
+        }
+    }
+}
+.post-show-relation-container {
+    background-color: #f0f0f0;
+    &__content {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
 .post-show-info-container {
-    width: 70%;
     .post-show-content-head{
         height: 600px;
         margin-top: 70px;
@@ -123,13 +172,13 @@
     }
 }
 .post-show-article-container {
-    width: 70%;
     .post-show-content-article {
         margin-top: 70px;
         &__head {
             margin-bottom: 80px;
             &-ttl {
                 height: 100px;
+                margin-bottom: 10px;
                 border: 1px solid $sub-color;
                 border-style: solid none solid none;
                 font-size: 1.5rem;
@@ -174,6 +223,7 @@
             }
             &-txt {
                 padding: 20px;
+                font-size: 0.9rem;
                 .post-tag {
                     color: #1d59be;
                     text-decoration: underline;
@@ -183,7 +233,7 @@
                 }
             }
         }
-        .post-show-content {
+        .post-movie-content {
             margin-bottom: 80px;
             &__ttl {
                 min-height: 80px;
@@ -207,6 +257,7 @@
                 }
             }
             &__txt {
+                font-size: 0.9rem;
                 padding: 20px;
             }
             &:last-child {

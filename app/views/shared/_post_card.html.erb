@@ -3,7 +3,7 @@
     <div class="post-card__flame">
       <div class="card-img">
         <% post.movies.each do |movie| %>
-          <img class="card-img__cont" src=<%= movie.image %> alt="">
+          <%= image_tag movie.image, class: "card-img__cont"%>
         <% end %>
       </div>
     </div>
@@ -19,7 +19,7 @@
           <div class="section-1__username"><%= post.user.name %></div>
         </div>
         <div class="section-2">
-          <div class="section-2__date">2020/12/1</div>
+          <div class="section-2__date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
         </div>
       </div>
     </div>

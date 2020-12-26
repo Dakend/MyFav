@@ -1,0 +1,21 @@
+<div class="post-head-container">
+  <div class="post-head-label">
+    <div class="post-head-label__txt"><%= text %></div>
+    <% if category %>
+      <%= link_to category_path(category), class: "post-head-label__more" do %>すべて見る<% end %>
+    <% end %>
+  </div>
+  <div class="post-head-block">
+    <div class="scroll-left-btn">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="post-card-block">
+      <% posts.each do |post| %>
+        <%= render 'shared/post_card', post: post %>
+      <% end %>
+    </div>
+    <div class="scroll-right-btn">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+</div>
