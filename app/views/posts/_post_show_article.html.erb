@@ -1,29 +1,29 @@
 <div class="post-show-article-container">
   <div class="post-show-content-article">
     <div class="post-show-content-article__head">
-      <div class="post-show-content-article__head-ttl"><%= @post.title %></div>
+      <div class="post-show-content-article__head-ttl"><%= post.title %></div>
       <div class="post-show-content-article__head-info">
         <div class="post-show-content-article__head-info-icon">
-          <%= link_to image_tag(@post.user.icon, class: "post-show-content-article__head-info-icon-img"), user_path(@post.user.id) %>
+          <%= link_to image_tag(post.user.icon, class: "post-show-content-article__head-info-icon-img"), user_path(post.user.id) %>
         </div>
         <div class="post-show-content-article__head-info-username">
-          <%= link_to user_path(@post.user.id) do %>
-            <%= @post.user.name %>
+          <%= link_to user_path(post.user.id) do %>
+            <%= post.user.name %>
           <% end %>
         </div>
-        <div class="post-show-content-article__head-info-date">2020/12/01</div>
+        <div class="post-show-content-article__head-info-date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
       </div>
       <div class="post-show-content-article__head-txt">
-        <%= simple_format @post.content %>
-        <% @post.tags.each do |tag| %>
+        <%= simple_format post.content %>
+        <% post.tags.each do |tag| %>
           <%= link_to tag_path(tag) do %>
             <div class="post-tag">#<%= tag.name %></div>
           <% end %>
         <% end %>
       </div>
     </div>
-    <% @post.movies.each do |movie| %>
-      <%= render "posts/post_show_content", movie: movie %>
+    <% post.movies.each do |movie| %>
+      <%= render "posts/post_movie_content", movie: movie %>
     <% end %>
   </div>
 </div>

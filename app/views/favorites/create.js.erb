@@ -1,2 +1,2 @@
-document.getElementById('post-favorite-logo-<%= @favorite.post_id %>').innerHTML = '<%= j(render 'posts/favorited', post: @favorite.get_post) %>';
+document.getElementById('post-favorite-logo-<%= @favorite.post_id %>').innerHTML = '<%= j(render 'favorites/favorited', post: @favorite.post) %>';
 document.getElementById('post-favorite-number-<%= @favorite.post_id %>').innerHTML++;

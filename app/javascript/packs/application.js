@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("posts/post_form")
+require("posts/post_scroll")
 require("users/user_show")
 
 // Uncomment to copy all static images under ../images to the output folder and reference

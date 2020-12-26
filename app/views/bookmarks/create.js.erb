@@ -1,1 +1,1 @@
-document.getElementById('post-bookmark-<%= @bookmark.post_id %>').innerHTML = '<%= j(render 'posts/bookmarked', post: @bookmark.get_post) %>';
+document.getElementById('post-bookmark-<%= @bookmark.post_id %>').innerHTML = '<%= j(render 'bookmarks/bookmarked', post: @bookmark.get_post) %>';

@@ -1,7 +1,7 @@
 @import 'common/format';
 @import 'common/color';
 
-.post-card {
+@mixin post-card-template {
     width: 300px;
     height: 255px;
     background-color: #fff;
@@ -9,12 +9,11 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    margin: 20px 0;
     &:hover {
         box-shadow: 0px 0px 16px -6px rgba(0,0,0,0.6);
         .card-img {
-            transform:scale(1.1,1.1);
-            transition:0.2s all;
+            transform:scale(1.05,1.05);
+            transition:0.3s all;
         }
     }
     a {
@@ -29,11 +28,12 @@
             display: flex;
             flex-wrap: wrap;
             border-radius: 15px 15px 0 0;
-            transition:0.2s all;
+            transition:0.3s all;
             &__cont {
                 width: 150px;
                 height: 80px;
-                display: block;
+                display: flex;
+                flex-wrap: wrap;
                 object-fit: cover;
                 &:first-child {
                     border-radius: 15px 0 0 0;

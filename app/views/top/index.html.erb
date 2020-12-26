@@ -1,8 +1,8 @@
 <div class="post-top-container">
-  <%= render 'posts/post_header' %>
-  <div class="post-head-container">
-    <% @posts.each do |post| %>
-      <%= render 'shared/post_head_content', post: post %>
-    <% end %>
-  </div>
+  <%= render 'posts/post_head_content', text: "新着", category: nil, posts: @posts %>
+  <%= render 'posts/post_head_content', text: "エンターテイメント", category: @category_entertainment, posts: @posts %>
+  <%# <%= render 'posts/post_head_content', category: "音楽", posts: @posts  %>
+  <%# <%= render 'posts/post_head_content', category: "映画/アニメ", posts: @posts %>
+  <%# <%= render 'posts/post_head_content', category: "スポーツ", posts: @posts  %>
+  <%= render 'posts/post_head_content', text: "いいね", category: nil, posts: @posts_latest_favorite %>
 </div>

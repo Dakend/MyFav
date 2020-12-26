@@ -1,61 +1,132 @@
 @import 'common/color';
 @import 'common/format';
+@import 'post_card';
 
-.user-profile-content {
-    width: 900px;
-    height: 200px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.6);
-    display: flex;
-    .profile-img {
-        width: 28%;
+.user-profile-container {
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    @include just-block;
+    .user-profile-content {
+        width: 900px;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.6);
         display: flex;
-        flex-direction: column;
-        &__icon {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            @include bg-main-color;
-            border-radius: 15px;
+        .profile-img {
+            width: 28%;
+            display: flex;
+            flex-direction: column;
+            &__icon {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @include bg-main-color;
+                border-radius: 15px;
+            }
+        }
+        .profile-info {
+            width: 72%;
+            position: relative;
+            &__name {
+                text-align: center;
+                font-size: 1.5rem;
+                margin: 10px 0;
+                border-bottom: 1px solid $sub-color;
+            }
+            &__txt {
+                padding-left: 10px;
+                margin-bottom: 10px;
+                font-size: 0.95rem;
+                padding-bottom: 5px;
+                p {
+                    margin: 5px 0 5px 0;
+                    color: #666666;
+                }
+            }
+            &__edit {
+                width: 50px;
+                position: absolute;
+                @include bg-main-color;
+                border: 1px solid #fff;
+                @include just-text;
+                color: #fff;
+                opacity: 0.7;
+                border-radius: 10px;
+                font-size: 0.9rem;
+                bottom: 0;
+                right: 0;
+                &:hover {
+                    cursor: pointer;
+                    background: #222;
+                    color: #fff;
+                }
+            }
         }
     }
-    .profile-info {
-        width: 72%;
-        position: relative;
-        &__name {
+}
+
+.user-post-container {
+    .user-post-tabs {
+        margin-top: 50px;
+        padding-bottom: 40px;
+        background-color: #f0f0f0;
+        box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.6);
+        width: 900px;
+        margin: 0 auto;
+        .tab-item {
+            width: calc(100%/2);
+            height: 50px;
+            background-color: #fff;
+            line-height: 50px;
+            font-size: 1.1rem;
             text-align: center;
-            font-size: 1.5rem;
-            margin: 10px 0;
-            border-bottom: 1px solid $sub-color;
+            color: #565656;
+            display: block;
+            float: left;
+            font-weight: bold;
+            transition: all 0.2s ease;
         }
-        &__txt {
-            padding-left: 10px;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            padding-bottom: 5px;
-            p {
-                margin: 5px 0 5px 0;
-                color: #666666;
+        .tab-item:hover {
+            opacity: 0.85;
+        }
+        input[name="tab-item"] {
+            display: none;
+        }
+        .tab-content {
+            display: none;
+            padding: 40px 40px 0;
+            clear: both;
+            overflow: hidden;
+            &__container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                .post-card {
+                    @include post-card-template;
+                    margin-bottom: 50px;
+                }
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 300px;
+                    order: 1;
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 300px;
+                }
             }
         }
-        &__edit {
-            width: 50px;
-            position: absolute;
+        #posts:checked ~ #posts-content,
+        #bookmarks:checked ~ #bookmarks-content {
+            display: block;
+        }
+        input:checked + .tab-item {
             @include bg-main-color;
-            border: 1px solid #fff;
-            @include just-text;
             color: #fff;
-            opacity: 0.7;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            bottom: 0;
-            right: 0;
-            &:hover {
-                cursor: pointer;
-                background: #222;
-                color: #fff;
-            }
         }
     }
 }

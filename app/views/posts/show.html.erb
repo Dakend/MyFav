@@ -1,24 +1,21 @@
 <div class="post-show-container">
-  <div class="post-show-section-main">
-    <div class="post-show-section-main__info">
-      <%= render "posts/post_show_info" %>
+  <div class="post-show-main-container">
+    <div class="post-main-infomation">
+      <%= render "posts/post_show_info", post: @post %>
     </div>
-    <div class="post-show-section-main__article">
-      <%= render "posts/post_show_article" %>
+    <div class="post-main-article">
+      <%= render "posts/post_show_article", post: @post %>
   </div>
   </div>
-  <div class="post-show-section-comment">
-    <%= render 'posts/post_comment' %>
+  <div class="post-show-comment-container">
+    <%= render 'posts/post_comment', post: @post, comments: @comments %>
   </div>
-  <div class="post-show-section-link">
-    <%= link_to "投稿一覧に戻る", root_path, class: "post-show-section-link__block" %>
-  </div>
-  <div class="post-show-section-relation">
-    <div class="post-show-section-relation__content">
-      <%= render 'shared/post_head_content', post: @post %>
-      <%= render 'shared/post_head_content', post: @post %>
-      <%= render 'shared/post_head_content', post: @post %>
-      <%= render 'shared/post_head_content', post: @post %>
+  <div class="post-show-link-container">
+    <div class="post-show-link">
+      <%= link_to "投稿一覧に戻る", root_path, class: "post-show-link__block" %>
     </div>
+  </div>
+  <div class="post-show-relation-container">
+    <%= render 'posts/post_head_content', text: "関連動画", category: nil, posts: @posts %>
   </div>
 </div>
