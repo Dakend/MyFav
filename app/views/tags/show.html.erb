@@ -4,5 +4,7 @@
     <% @posts.each do |post| %>
       <%= render 'shared/post_card', post: post %>
     <% end %>
+    <%= paginate @posts %>
   </div>
+  
 </div>

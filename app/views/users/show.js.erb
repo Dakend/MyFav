@@ -1,0 +1,2 @@
+document.getElementById('posts-content').innerHTML = '<%= j(render 'users/user_post_contents', user_posts: @user_posts) %>';
+document.getElementById('bookmarks-content').innerHTML = '<%= j(render 'users/user_bookmark_post_contents', user_bookmark_posts: @user_bookmark_posts) %>';

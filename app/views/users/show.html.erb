@@ -3,6 +3,6 @@
     <%= render 'users/user_profile_content', user: @user %>
   </div>
   <div class="user-post-container">
-    <%= render "users/user_post_tabs", user: @user %>
+    <%= render "users/user_post_tabs", user: @user,  user_posts: @user_posts, user_bookmark_posts: @user_bookmark_posts %>
   </div>
 </div>

@@ -99,7 +99,7 @@
             padding: 40px 40px 0;
             clear: both;
             overflow: hidden;
-            &__container {
+            &__main {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
@@ -117,6 +117,19 @@
                     content: "";
                     display: block;
                     width: 300px;
+                }
+            }
+            &__pagination {
+                // background-color: red;
+                @include just-text;
+                .pagination {
+                    a {
+                        color : inherit;
+                    }
+                    .page:hover {
+                        border-radius: 15px;
+                        color: red;
+                    }
                 }
             }
         }

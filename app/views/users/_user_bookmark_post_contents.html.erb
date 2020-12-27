@@ -1,0 +1,8 @@
+<div class="tab-content__main">
+  <% user_bookmark_posts.each do |post| %>
+    <%= render 'shared/post_card', post: post %>
+  <% end %>
+</div>
+<div class="tab-content__pagination">
+  <%= paginate user_bookmark_posts, param_name: 'page_2', remote: true %>
+</div>
