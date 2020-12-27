@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def show
     @post_form = PostForm.new
     @post = Post.find(params[:id])
-    @posts = Post.limit(10)
+    @posts = get_posts_related_to_this_post_category
     @comment = Comment.new
     @comments = @post.comments
   end
@@ -32,6 +32,17 @@ class PostsController < ApplicationController
                                         :movie_link_3, :movie_content_3,
                                         :movie_link_4, :movie_content_4)
                                         .merge(user_id: current_user.id)
+    end
+
+    def get_posts_related_to_this_post_category
+      post_ids_list = @post.categories.map{|category| category.posts.limit(3).ids}
+      posts = []
+      post_ids_list.each do |post_ids|
+        post_ids.each do |post_id|
+          posts << Post.find(post_id)
+        end
+      end
+      posts.uniq
     end
 
 end
