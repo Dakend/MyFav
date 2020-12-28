@@ -6,19 +6,11 @@
     <label class="tab-item" for="bookmarks">Bookmarks</label>
   <% end %>
   <div class="tab-content" id="posts-content">
-    <div class="tab-content__container">
-      <% user.posts.each do |post| %>
-        <%= render 'shared/post_card', post: post %>
-      <% end %>
-    </div>
+    <%= render 'users/user_post_contents', user_posts: user_posts %>
   </div>
   <% if user_signed_in? && current_user.id == user.id %>
     <div class="tab-content" id="bookmarks-content">
-      <div class="tab-content__container">
-        <% user.bookmark_posts.each do |post| %>
-          <%= render 'shared/post_card', post: post %>
-        <% end %>
-      </div>
+      <%= render 'users/user_bookmark_post_contents', user_bookmark_posts: user_bookmark_posts %>
     </div>
   <% end %>
 </div>

@@ -24,8 +24,33 @@
 .post-tag-main-container {
     width: 1200px;
     margin: 0 auto;
-    .post-card {
-        @include post-card-template;
-        margin-bottom: 50px;
+    .post-tag-content {
+        &__main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            .post-card {
+                @include post-card-template;
+                margin: 0 50px 50px 50px;
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: 300px;
+                margin: 0 50px;
+                order: 1;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 300px;
+                margin: 0 50px;
+            }
+        }
+        &__pagination {
+            @include just-block;
+            @include pagination-template(50px, 30px);
+            margin: 0 auto;
+        }
     }
 }

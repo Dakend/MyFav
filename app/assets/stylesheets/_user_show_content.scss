@@ -1,5 +1,6 @@
 @import 'common/color';
 @import 'common/format';
+@import 'common/pagination';
 @import 'post_card';
 
 .user-profile-container {
@@ -99,7 +100,7 @@
             padding: 40px 40px 0;
             clear: both;
             overflow: hidden;
-            &__container {
+            &__main {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
@@ -118,6 +119,11 @@
                     display: block;
                     width: 300px;
                 }
+            }
+            &__pagination {
+                @include just-block;
+                @include pagination-template(50px, 30px);
+                
             }
         }
         #posts:checked ~ #posts-content,

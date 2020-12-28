@@ -3,7 +3,15 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @user_posts = @user.posts.page(params[:page_1]).per(4)
+    @user_bookmark_posts = @user.bookmark_posts.page(params[:page_2]).per(4)
     @post_form = PostForm.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    
   end
 
   def update
