@@ -1,8 +1,8 @@
 <div class="post-tag-container">
   <%= render 'posts/post_tag_header', tag: @category %>
   <div class="post-tag-main-container">
-    <% @posts.each do |post| %>
-      <%= render 'shared/post_card', post: post %>
-    <% end %>
+    <div class="post-tag-content" id="posts-content">
+      <%= render 'categories/post_tag_content', posts: @posts %>
+    </div>
   </div>
 </div>

@@ -1,0 +1,8 @@
+<div class="post-tag-content__main">
+  <% posts.each do |post| %>
+    <%= render 'shared/post_card', post: post %>
+  <% end %>
+</div>
+<div class="post-tag-content__pagination">
+  <%= paginate posts, remote: true %>
+</div>
