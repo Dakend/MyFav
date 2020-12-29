@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     @user_posts = @user.posts.page(params[:page_1]).per(4)
     @user_bookmark_posts = @user.bookmark_posts.page(params[:page_2]).per(4)
     @post_form = PostForm.new
-
     respond_to do |format|
       format.html
       format.js

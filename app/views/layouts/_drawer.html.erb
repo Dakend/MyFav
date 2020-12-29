@@ -1,0 +1,58 @@
+<div class="header-drawer">
+  <input id="nav-input" type="checkbox" class="nav-unshown">
+  <label id="nav-open" for="nav-input">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </label>
+  <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+  <div id="nav-content">
+    <ul class="nav-list">
+      <% if user_signed_in? %>
+        <li class="nav-list__user">
+          <%= link_to image_tag(current_user.icon, class: "nav-list__user-icon"), user_path(current_user) %>
+          <span class="nav-list__user-name"><%= current_user.name %></span>
+        </li>
+      <% end %>
+      <li class="nav-list__home">
+        <%= link_to root_path, class: "link-block" do %>
+          <i class="fas fa-home"></i>
+          <span>ホーム</span>
+        <% end %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-list__profile">
+          <%= link_to user_path(current_user), class: "link-block" do %>
+            <i class="fas fa-user"></i>
+            <span>プロフィール</span>
+          <% end %>
+        </li>
+        <li class="nav-list__account">
+          <%= link_to edit_user_registration_path, class: "link-block" do %>
+            <i class="fas fa-key"></i>
+            <span>アカウント情報更新</span>
+          <% end %>
+        </li>
+        <li class="nav-list__logout">
+          <%= link_to destroy_user_session_path, method: :delete, class: "link-block" do %>
+            <i class="fas fa-sign-out-alt"></i>
+            <span>ログアウト</span>
+          <% end %>
+        </li>
+      <% else %>
+        <li class="nav-list__login">
+          <%= link_to new_user_session_path, class: "link-block" do %>
+            <i class="fas fa-sign-in-alt"></i>
+            <span>ログイン</span>
+          <% end %>
+        </li>
+        <li class="nav-list__registraion">
+          <%= link_to new_user_registration_path, class: "link-block" do %>
+            <i class="fas fa-user-plus"></i>
+            <span>新規登録</span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
