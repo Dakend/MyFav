@@ -1,13 +1,20 @@
 <header>
-  <div class="header-logo">
-    <%= link_to image_tag("https://picsum.photos/100/100", class:"header-logo__img"), root_path %>
-  </div>
-  <div class="header-search">
-  </div>
-  <div class="header-post">
-    <%= render 'posts/post_form' %>
-  </div>
-  <div class="header-login">
-    <%= link_to "Login", new_user_session_path, class: "header-login__link" %>
+  <div class="header-container">
+    <%= render 'layouts/drawer' %>
+    <div class="header-logo">
+      <%= link_to image_tag("https://picsum.photos/100/100", class:"header-logo__img"), root_path, 'data-turbolinks': false %>
+    </div>
+    <% if user_signed_in? %>
+      <div class="header-post">
+        <%= render 'posts/post_form' %>
+      </div>
+      <div class="header-icon">
+        <%= link_to image_tag(current_user.icon, class: "header-icon__img"), user_path(current_user) %>
+      </div>
+    <% else %>
+      <div class="header-login">
+        <%= link_to "ログイン", new_user_session_path, class: "header-login__item" %>
+      </div>
+    <% end %>
   </div>
 </header>

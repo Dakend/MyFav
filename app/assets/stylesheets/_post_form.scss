@@ -3,21 +3,16 @@
 
 
 .modal-post-open {
-    width: 150px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     @include bg-main-color;
     color: #fff;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 15px;
+    border-radius: 10px;
+    font-size: 1.3rem;
     cursor: pointer;
     @include just-text;
     &:hover {
-        background: #fff;
-        color: #000000;
-        margin: -2px;
-        border: 2px solid red;
-        margin: -2px;
+        opacity: 0.8;
     }
 }
 .modal-post-form {
@@ -37,7 +32,6 @@
     transition: 0.2s;
     overflow: hidden;
     overflow-y: scroll;
-    /* max-height: 80px; */
     &.active {
         opacity: 1;
         visibility: visible;
@@ -74,7 +68,6 @@
         }
         .form-group {
             width: 100%;
-            // border: 1px solid black;
             margin-bottom: 1em;
             .form-label {
                 width: 80%;

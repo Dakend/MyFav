@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def index
     @posts = Post.limit(10)
-    
+
     @category_entertainment = Category.find_by(name: "エンターテイメント")
     @posts_entertainment = Category.find_by(name: "エンターテイメント").posts.limit(10)
 

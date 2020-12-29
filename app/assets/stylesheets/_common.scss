@@ -7,6 +7,15 @@ body {
     font-family: "Noto Sans JP", "游ゴシック", YuGothic, Helvetica, Arial, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, verdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
+header {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+}
+
 .wrapper {
     margin: 70px auto 0;
 }
@@ -35,3 +44,4 @@ body {
 .user-show-container {
     background-color: #f0f0f0;
 }
+

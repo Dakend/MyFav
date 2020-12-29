@@ -1,58 +1,53 @@
 @import 'common/color';
 @import 'common/format';
 
-header {
-    height: 70px;
-    width: 100%;
+.header-container {
+    height: 100%;
+    margin: 0 auto;
     display: flex;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    background-color: #fff;
-    border-bottom: 1px solid $sub-color;
     .header-logo {
         margin-left: 30px;
+        @include just-block;
         &__img {
-            width: 100px;
+            width: 150px;
             height: 50px;
+            display: block;
             object-fit: cover;
         }
     }
-    .header-search {
-        width: 600px;
-        // border: 1px solid black;
-        margin-left: 300px;
-    }
     .header-post {
-        width: 150px;
-        margin-left: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        margin-left: auto;
+        @include just-block;
+    }
+    .header-icon {
+        @include just-block;
+        margin: 0 50px 0 30px;
+        &__img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: block;
+            @include bg-main-color;
+            &:hover {
+                opacity: 0.8;
+            } 
+        }
     }
     .header-login {
-        width: 150px;
-        margin-left: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        &__link {
-            width: 150px;
+        margin: 0 50px 0 auto;
+        @include just-block;
+        &__item {
+            width: 80px;
             height: 30px;
-            @include bg-main-color;
-            color: #fff;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 100vh;
+            border: 1px solid $sub-color;
+            border-radius: 10px;
             text-decoration: none;
+            font-size: 0.8rem;
+            color: inherit;
             cursor: pointer;
             @include just-text;
             &:hover {
-                background: #fff;
-                color: #000000;
-                margin: -2px;
-                border: 2px solid red;
-                margin: -2px;
+                border: 1px solid red;
             }
         }
     }
