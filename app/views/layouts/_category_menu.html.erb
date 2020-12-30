@@ -1,0 +1,14 @@
+<div class="header-category">
+  <input id="category-menu-input" type="checkbox" class="category-menu-unshown">
+  <label id="category-menu-open" for="category-menu-input">カテゴリー</label>
+  <label class="category-menu-unshown" id="category-menu-close" for="category-menu-input"></label>
+  <div id="category-menu-content" class="category-menu-content">
+    <% @categories_for_menu.each do |category| %>
+      <div class="category-menu-content__item">
+        <%= link_to category_path(category) do %>
+          <%= category.name %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

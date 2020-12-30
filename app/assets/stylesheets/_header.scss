@@ -5,49 +5,67 @@
     height: 100%;
     margin: 0 auto;
     display: flex;
-    .header-logo {
-        margin-left: 30px;
-        @include just-block;
-        &__img {
-            width: 150px;
-            height: 50px;
-            display: block;
-            object-fit: cover;
+    .section-left {
+        display: flex;
+        width: calc(100% / 3);
+        justify-content: flex-start;
+        .header-drawer {
+            margin-left: 30px;
+        }
+        .header-logo {
+            margin-left: 30px;
+            @include just-block;
+            &__img {
+                width: 150px;
+                height: 50px;
+                display: block;
+                object-fit: cover;
+            }
         }
     }
-    .header-post {
-        margin-left: auto;
-        @include just-block;
+    .section-center {
+        display: flex;
+        width: calc(100% / 3);
+        justify-content: space-around;
     }
-    .header-icon {
-        @include just-block;
-        margin: 0 50px 0 30px;
-        &__img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: block;
-            @include bg-main-color;
-            &:hover {
-                opacity: 0.8;
-            } 
+    .section-right {
+        display: flex;
+        width: calc(100% / 3);
+        justify-content: flex-end;
+        .header-post {
+            margin-right: 30px;
+            @include just-block;
         }
-    }
-    .header-login {
-        margin: 0 50px 0 auto;
-        @include just-block;
-        &__item {
-            width: 80px;
-            height: 30px;
-            border: 1px solid $sub-color;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            color: inherit;
-            cursor: pointer;
-            @include just-text;
-            &:hover {
-                border: 1px solid red;
+        .header-icon {
+            margin-right: 50px;
+            @include just-block;
+            &__img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: block;
+                @include bg-main-color;
+                &:hover {
+                    opacity: 0.8;
+                } 
+            }
+        }
+        .header-login {
+            margin-right: 50px;
+            @include just-block;
+            &__item {
+                width: 80px;
+                height: 30px;
+                border: 1px solid $sub-color;
+                border-radius: 10px;
+                text-decoration: none;
+                font-size: 0.8rem;
+                color: inherit;
+                cursor: pointer;
+                @include just-text;
+                &:hover {
+                    border: 1px solid red;
+                }
             }
         }
     }

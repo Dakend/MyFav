@@ -1,0 +1,77 @@
+@import 'common/color';
+@import 'common/format';
+
+.header-category {
+    @include just-block;
+    .category-menu-unshown {
+        display:none;
+    }
+    #category-menu-open {
+        width: 260px;
+        height: 40px;
+        color: #666;
+        border: 1px solid $sub-color;
+        border-radius: 5px;
+        @include just-text;
+        cursor: pointer;
+        &:hover {
+            border: 1px solid red;
+        }
+    }
+    #category-menu-close {
+        display: none;
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0;
+    }
+    .category-menu-content {
+        width: 500px;
+        border-radius: 5px;
+        position: fixed;
+        top: 90px;
+        left: 100;
+        z-index: 3;
+        background-color: #fff;
+        visibility: hidden;
+        padding: 30px 50px;
+        display: flex;
+        flex-wrap: wrap;
+        &__item {
+            height: 1rem;
+            font-size: 0.85rem;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+            @include just-text;
+            &:hover {
+                @include bg-main-color;
+                color: #fff;
+                cursor: pointer;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
+    #category-menu-input:checked ~ #category-menu-open {
+        @include bg-main-color;
+        padding: 1px;
+        color: #fff;
+        border-style: none;
+        z-index: 4;
+    }
+    #category-menu-input:checked ~ #category-menu-close {
+        display: block;
+        opacity: 0.2;
+    }
+    #category-menu-input:checked ~ #category-menu-content {
+        visibility: visible;
+    }
+}

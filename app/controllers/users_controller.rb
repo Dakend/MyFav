@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:update]
+  before_action :get_category_and_tag_to_set_header_menu, only: [:show]
   
   def show
     @user = User.find(params[:id])

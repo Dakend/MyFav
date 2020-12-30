@@ -16,6 +16,11 @@ $sub-color: #c0c0c0;
     border-image: $mian-color;
     border-image-slice: 1;
 }
+@mixin border-main-color-bottom($px: 2px) {
+    border-bottom: $px solid;
+    border-image: $mian-color;
+    border-image-slice: 1;
+}
 @mixin border-main-color-left-right($px: 2px) {
     border-right: $px solid;
     border-left: $px solid;

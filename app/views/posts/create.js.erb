@@ -1,6 +1,6 @@
 <% if @post_form.errors.any? %>
-  document.getElementById('post-form-errors').innerHTML = '<%= j(render 'shared/error_messages', model: @post_form) %>';
-  document.getElementById('post-form-errors').classList.add("active");
+  document.getElementById('form-errors').innerHTML = '<%= j(render 'shared/error_messages', model: @post_form) %>';
+  document.getElementById('form-errors').classList.add("active");
 <% else %>
   window.location.replace("<%= post_path(@new_post) %>")
 <% end %>
