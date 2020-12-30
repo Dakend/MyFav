@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys:[:name])
       devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     end
+  
+  private
+    def get_category_and_tag_to_set_header_menu
+      @categories_for_menu = Category.joins(:post_categories).uniq
+      @tags_for_menu = Tag.order(updated_at: :desc).limit(20).joins(:post_tags).uniq
+    end
 end

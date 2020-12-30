@@ -1,0 +1,14 @@
+<div class="header-tag">
+  <input id="tag-menu-input" type="checkbox" class="tag-menu-unshown">
+  <label id="tag-menu-open" for="tag-menu-input">ハッシュタグ (New)</label>
+  <label class="tag-menu-unshown" id="tag-menu-close" for="tag-menu-input"></label>
+  <div id="tag-menu-content" class="tag-menu-content">
+    <% @tags_for_menu.each do |tag| %>
+      <div class="tag-menu-content__item">
+        <%= link_to tag_path(tag) do %>
+          #<%= tag.name %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

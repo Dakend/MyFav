@@ -1,4 +1,6 @@
 class TopController < ApplicationController
+  before_action :get_category_and_tag_to_set_header_menu
+
   def index
     @posts = Post.limit(10)
 
@@ -15,6 +17,9 @@ class TopController < ApplicationController
     # @posts_sports = @category_sports.posts.limit(10)
 
     @posts_latest_favorite = Favorite.order(created_at: :desc).limit(5).map{|favorite| favorite.post}
+
+    @categories = Category.all
+    @tags = Tag.order(created_at: :desc).limit(30)
 
     @post_form = PostForm.new
   end

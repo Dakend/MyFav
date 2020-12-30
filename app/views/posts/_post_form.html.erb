@@ -2,61 +2,61 @@
   <i class="fas fa-feather-alt"></i>
 </div>
 <div id="modal-post-form" class="modal-post-form">
-    <div class="modal-post-form__header" id="modal-post-form__header">
-      Let's share your favorite things
-    </div>
-    <%= form_with model: @post_form, url: posts_path, class: "form" do |f| %> 
-      <div class="post-form-errors" id="post-form-errors"></div>
-      <hr>
-      <div class="form-group">
-        <%= f.text_field :post_title, class: 'form-control', placeholder: "post_title" %>
-        <%= f.label :post_title, "投稿記事のタイトル", class: "form-label" %>
+    <i id="modal-post-cancel" class="fas fa-times-circle modal-post-form__cancel" ></i>
+    <section>
+      <div class="modal-post-form__header">
+        お気に入り動画に関する記事を投稿してみよう！
       </div>
-      <div class="form-group">
-        <%= f.text_area :post_content, class: 'form-control-area', placeholder: "post_content" %>
-        <%= f.label :post_content, "投稿記事の説明 #ハッシュタグも付けてみよう！", class: "form-label" %>
-      </div>
-      <hr>
-      <div class="form-group">
-        <%= f.text_field :movie_link_1, class: 'form-control', placeholder: "movie_link_1", required: true %>
-        <%= f.label :movie_link_1, "おすすめ動画#1 YouTube動画URL", class: "form-label" %>
-      </div>
-      <div class="form-group">
-        <%= f.text_area :movie_content_1, class: 'form-control-area', placeholder: "movie_content_1", required: true %>
-        <%= f.label :movie_content_1, "動画コメント", class: "form-label" %> 
-      </div>
-      <hr>
-      <div class="form-group">
-        <%= f.text_field :movie_link_2, class: 'form-control', placeholder: "movie_link_2", required: true %>
-        <%= f.label :movie_link_2, "おすすめ動画#2 YouTube動画URL", class: "form-label" %>
-      </div>
-      <div class="form-group">
-        <%= f.text_area :movie_content_2, class: 'form-control-area', placeholder: "movie_content_2", required: true %>
-        <%= f.label :movie_content_2, "動画コメント", class: "form-label" %>
-      </div>
-      <hr>
-      <div class="form-group">
-        <%= f.text_field :movie_link_3, class: 'form-control', placeholder: "movie_link_3", required: true %>
-        <%= f.label :movie_link_3, "おすすめ動画#3 YouTube動画URL", class: "form-label" %>
-      </div>
-      <div class="form-group">
-        <%= f.text_area :movie_content_3, class: 'form-control-area', placeholder: "movie_content_3", required: true %>
-        <%= f.label :movie_content_3, "動画コメント", class: "form-label"  %>
-      </div>
-      <hr>
-      <div class="form-group">
-        <%= f.text_field :movie_link_4, class: 'form-control', placeholder: "movie_link_4", required: true %>
-        <%= f.label :movie_link_4, "おすすめ動画#4 YouTube動画URL", class: "form-label" %>
-      </div>
-      <div class="form-group">
-        <%= f.text_area :movie_content_4, class: 'form-control-area', placeholder: "movie_content_4", required: true %>
-        <%= f.label :movie_content_4, "動画コメント", class: "form-label" %>
-      </div>
-      <hr>
-      <div class="form-btn">
-        <%= f.submit 'Share', id: "form-btn-post", class: "form-btn__post" %>
-        <div id="modal-post-cancel" class="form-btn__cancel">Cancel</div>
-      </div>
-    <% end %>
+      <%= form_with model: @post_form, url: posts_path, class: "form" do |f| %> 
+        <div class="form-group">
+          <%= f.text_field :post_title, class: 'form-control', placeholder: "post_title" %>
+          <%= f.label :post_title, "投稿記事のタイトル*", class: "form-label" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :post_content, class: 'form-control-area', placeholder: "post_content" %>
+          <%= f.label :post_content, "投稿記事の説明 #ハッシュタグも付けてみよう！", class: "form-label" %>
+        </div>
+        <hr>
+        <div class="form-group">
+          <%= f.text_field :movie_link_1, class: 'form-control', placeholder: "movie_link_1", required: true %>
+          <%= f.label :movie_link_1, "おすすめ動画#1 YouTube動画URL*", class: "form-label" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :movie_content_1, class: 'form-control-area', placeholder: "movie_content_1" %>
+          <%= f.label :movie_content_1, "動画コメント", class: "form-label" %> 
+        </div>
+        <hr>
+        <div class="form-group">
+          <%= f.text_field :movie_link_2, class: 'form-control', placeholder: "movie_link_2", required: true %>
+          <%= f.label :movie_link_2, "おすすめ動画#2 YouTube動画URL*", class: "form-label" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :movie_content_2, class: 'form-control-area', placeholder: "movie_content_2" %>
+          <%= f.label :movie_content_2, "動画コメント", class: "form-label" %>
+        </div>
+        <hr>
+        <div class="form-group">
+          <%= f.text_field :movie_link_3, class: 'form-control', placeholder: "movie_link_3", required: true %>
+          <%= f.label :movie_link_3, "おすすめ動画#3 YouTube動画URL*", class: "form-label" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :movie_content_3, class: 'form-control-area', placeholder: "movie_content_3" %>
+          <%= f.label :movie_content_3, "動画コメント", class: "form-label"  %>
+        </div>
+        <hr>
+        <div class="form-group">
+          <%= f.text_field :movie_link_4, class: 'form-control', placeholder: "movie_link_4", required: true %>
+          <%= f.label :movie_link_4, "おすすめ動画#4 YouTube動画URL*", class: "form-label" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :movie_content_4, class: 'form-control-area', placeholder: "movie_content_4" %>
+          <%= f.label :movie_content_4, "動画コメント", class: "form-label" %>
+        </div>
+        <div class="form__errors" id="form-errors"></div>
+        <div class="form-btn">
+          <%= f.submit '投稿', id: "form-btn-post", class: "form-btn__post" %>
+        </div>
+      <% end %>
+    </section>
 </div>
 <div id="modal-post-mask" class="modal-post-mask"></div>

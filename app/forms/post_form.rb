@@ -36,7 +36,7 @@ class PostForm
       movie_links = [movie_link_1, movie_link_2, movie_link_3, movie_link_4]
       movie_contents = [movie_content_1, movie_content_2, movie_content_3, movie_content_4]
       @category_list = []
-      4.times {|num|
+      movie_links.length.times {|num|
         fetch_youtube_data(movie_links[num])
         params = create_params(movie_links[num], movie_contents[num])
         @post.movies.create(params)
