@@ -4,10 +4,10 @@
       <div class="post-show-content-article__head-ttl"><%= post.title %></div>
       <div class="post-show-content-article__head-info">
         <div class="post-show-content-article__head-info-icon">
-          <%= link_to image_tag(post.user.icon, class: "post-show-content-article__head-info-icon-img"), user_path(post.user.id) %>
+          <%= link_to image_tag(post.user.icon, class: "post-show-content-article__head-info-icon-img"), user_path(post.user) %>
         </div>
         <div class="post-show-content-article__head-info-username">
-          <%= link_to user_path(post.user.id) do %>
+          <%= link_to user_path(post.user) do %>
             <%= post.user.name %>
           <% end %>
         </div>

@@ -41,14 +41,6 @@ class Post < ApplicationRecord
     self.favorites.where(user_id: user.id).exists?
   end
 
-  # def movie_category
-  #   category_list = []
-  #   self.movies.ids.each do |id|
-  #     category_list << Movie.find(id).category
-  #   end
-  #   category_list.uniq
-  # end
-
   private
 
     #投稿記事からハッシュタグを抽出、検出した場合は配列に格納、投稿記事からハッシュタグを削除

@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :set_post_form, only: [:show]
   before_action :get_category_and_tag_to_set_header_menu, only: [:show]
 
   def create
-    # binding.pry
     @post_form = PostForm.new(post_params)
     if @post_form.save
       @new_post = Post.where(user_id: current_user.id).order(updated_at: :desc).limit(1).first
@@ -13,12 +13,12 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy!
-    redirect_to root_path, notice: "投稿を削除しました。"
+    @post.destroy
+    flash[:notice] = "投稿を削除しました。"
+    redirect_to root_path
   end
 
   def show
-    @post_form = PostForm.new
     @post = Post.find(params[:id])
     @posts = get_posts_related_to_this_post_category
     @comment = Comment.new
