@@ -1,5 +1,6 @@
 class TopController < ApplicationController
-  before_action :get_category_and_tag_to_set_header_menu
+  before_action :set_post_form, only: [:index]
+  before_action :get_category_and_tag_to_set_header_menu, only: [:index]
 
   def index
     @posts = Post.limit(10)
@@ -21,6 +22,5 @@ class TopController < ApplicationController
     @categories = Category.all
     @tags = Tag.order(created_at: :desc).limit(30)
 
-    @post_form = PostForm.new
   end
 end
