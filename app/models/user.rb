@@ -37,7 +37,7 @@ class User < ApplicationRecord
 
   private
     def default_icon
-      if !self.icon.attached?
+      unless self.icon.attached?
         self.icon.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default-image.jpg')), filename: 'default-image.jpg', content_type: 'image/jpg')
       end
     end

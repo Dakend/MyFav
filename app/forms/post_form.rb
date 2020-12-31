@@ -55,7 +55,7 @@ class PostForm
         link: movie_link,
         title: @movie_data.get_title,
         content: movie_content,
-        youtube_id: @movie_data.movie_id
+        youtube_id: @movie_data.movie_id,
       }
     end
 
