@@ -1,4 +1,5 @@
 class PostForm
+
   include ActiveModel::Model
   
   attr_accessor :post_title, :post_content, 
@@ -8,12 +9,15 @@ class PostForm
                 :movie_link_4, :movie_content_4,
                 :user_id
   
-  validates :post_title, presence: true, length: { maximum: 30 }
-  validates :post_content, length: { maximum: 400 }
-  validates :movie_link_1, presence: true
-  validates :movie_link_2, presence: true
-  validates :movie_link_3, presence: true
-  validates :movie_link_4, presence: true
+  with_options presence: true do
+    validates :movie_link_1
+    validates :movie_link_2
+    validates :movie_link_3
+    validates :movie_link_4
+    with_options length: { maximum: 30 } do
+      validates :post_title
+    end
+  end
 
   with_options length: { maximum: 400 } do
     validates :movie_content_1
@@ -25,9 +29,18 @@ class PostForm
 
   def save
     return false unless valid?
-    @post = Post.new(title: post_title, content: post_content, user_id: user_id)
-    @post.save
-    create_movies_and_category_relation
+    ActiveRecord::Base.transaction do
+      @post = Post.new(title: post_title, content: post_content, user_id: user_id)
+      @post.save!
+      create_movies_and_category_relation
+    end
+    return true
+  rescue RuntimeError
+    self.errors.add(:base, "存在しないURLが添付された可能性があります。URLをお確かめください。")
+    return false
+  rescue => ex
+    self.errors.add(:base, "意図しない動作が発生しました。お手数ですが、ページをリロードしてください。")
+    return false
   end
 
   private

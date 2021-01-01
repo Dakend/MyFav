@@ -10,10 +10,10 @@ class YoutubeData
 
   def initialize(url)
     @movie_id = get_movie_id(url)
-    raise 'invalid url' if movie_id.instance_of?(Array)
+    raise 'invalidUrlError' if movie_id.instance_of?(Array)
     options = { :id => movie_id }
     @response = YOUTUBE.list_videos("snippet", options)
-    raise 'invalid response' unless @response.items.any?
+    raise 'invalidApiResponseError' unless @response.items.any?
   end
 
   def get_title
