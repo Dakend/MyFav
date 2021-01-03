@@ -20,6 +20,7 @@ class PostForm
   end
 
   with_options length: { maximum: 400 } do
+    validates :post_content
     validates :movie_content_1
     validates :movie_content_2
     validates :movie_content_3
