@@ -31,7 +31,6 @@ class Post < ApplicationRecord
   before_create :get_tag_and_remove_tag
   after_create :create_tag_relation
   validates :title, presence: true
-  validates :user_id, presence: true
 
   def is_bookmarked_by?(user)
     self.bookmarks.where(user_id: user.id).exists?
