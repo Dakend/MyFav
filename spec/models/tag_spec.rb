@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Tag, type: :model do
-  let(:tag) { build_stubbed(:tag) }
+  let(:tag) { build(:tag) }
 
   describe 'attribute: name' do
     context 'when nil, blank, empty' do
