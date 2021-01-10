@@ -18,28 +18,28 @@
             <div class="form-input__name">
               <div class="form-flame">
                 <div class="form-flame__icon"><i class="fas fa-user"></i></div>
-                <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-flame__cont", placeholder: "ユーザー名" %>
+                <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-flame__cont", placeholder: "ユーザー名", required: true %>
               </div>
             </div>
             
             <div class="form-input__mail">
               <div class="form-flame">
                 <div class="form-flame__icon"><i class="fas fa-envelope"></i></div>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-flame__cont", placeholder: "メールアドレス" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-flame__cont", placeholder: "メールアドレス", required: true %>
               </div>
             </div>
 
             <div class="form-input__password">
               <div class="form-flame">
                 <div class="form-flame__icon"><i class="fas fa-lock"></i></div>
-                <%= f.password_field :password, autocomplete: "new-password", class: "form-flame__cont", placeholder: "パスワード" %>
+                <%= f.password_field :password, autocomplete: "new-password", class: "form-flame__cont", placeholder: "パスワード", required: true %>
               </div>
             </div>
 
             <div class="form-input__password">
               <div class="form-flame">
                 <div class="form-flame__icon"><i class="fas fa-lock"></i></div>
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-flame__cont", placeholder: "パスワード(確認用)" %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-flame__cont", placeholder: "パスワード(確認用)", required: true %>
               </div>
             </div>
 

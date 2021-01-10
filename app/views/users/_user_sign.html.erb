@@ -3,7 +3,7 @@
     <div class="signup-section">
       <div class="signup-section__header">
           <p class="signup-section__header-ttl">アカウントをお持ちでない方</p>
-          <p class="signup-section__header-txt">新登録していただくと、さらに便利な機能をご利用いただけます。</p>
+          <p class="signup-section__header-txt">新規登録していただくと、さらに便利な機能をご利用いただけます。</p>
       </div>
       <div class="signup-section__img"></div>
       <%= link_to "新規登録", new_user_registration_path, class: "signup-section__btn" %>
@@ -21,13 +21,13 @@
             <div class="form-input__mail">
               <div class="form-flame">
                 <div class="form-flame__icon"><i class="fas fa-envelope"></i></div>    
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-flame__cont", placeholder: "メールアドレス" %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-flame__cont", placeholder: "メールアドレス", required: true %>
               </div>
             </div>
             <div class="form-input__pass">
               <div class="form-flame">
                 <div class="form-flame__icon"><i class="fas fa-lock"></i></div>    
-                  <%= f.password_field :password, autocomplete: "current-password", class: "form-flame__cont", placeholder: "パスワード" %>
+                  <%= f.password_field :password, autocomplete: "current-password", class: "form-flame__cont", placeholder: "パスワード", required: true %>
               </div>
             </div>
             <% if devise_mapping.rememberable? %>

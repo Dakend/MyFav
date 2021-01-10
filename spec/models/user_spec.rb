@@ -110,4 +110,15 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'attribute: icon' do
+    context 'when create user' do
+      # userが新規作成された場合、iconに自動的にデフォルトイメージがセットされること
+      it 'set default image automatically' do
+        create(:user)
+        expect(user.icon.nil?).to be false
+      end
+    end
+  end
+
 end

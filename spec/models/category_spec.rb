@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  let(:category) { build_stubbed(:category) }
+  let(:category) { build(:category) }
 
   describe 'attribute: name' do
     context 'when nil' do

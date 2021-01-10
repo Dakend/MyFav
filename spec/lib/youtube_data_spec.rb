@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'YouTubData' do
+RSpec.describe 'YouTubDataClass', type: :lib do
   
   before(:all) do
     @youtube_data = YoutubeData.new("https://www.youtube.com/watch?v=6Dld9Lvukz4")
