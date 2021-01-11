@@ -1,17 +1,15 @@
 @import 'common/color';
 @import 'common/format';
 
-
 .sign-container {
     width: 800px;
-    height: 450px;
+    height: 500px;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 15px;
     @include just-block;
     .sign-content {
         width: 700px;
-        height: 360px;
         margin: auto;
         display: flex;
         justify-content: space-between;
@@ -29,7 +27,7 @@
                 }
             }
             &__img {
-                height: 200px;
+                height: 275px;
             }
             &__btn {
                 height: 55px;
@@ -60,6 +58,7 @@
                 }
             }
             &__form {
+                margin-bottom: 20px;
                 .form-input {
                     height: 260px;
                     display: flex;
@@ -159,10 +158,24 @@
                             background: #fff;
                             color: #000000;
                             border: 1px solid red;
-                            margin: -1px;
                             cursor: pointer;
                         }
                     }
+                }
+            }
+            &__guest {
+                height: 55px;
+                border-radius: 10px;
+                @include bg-main-color;
+                @include just-text;
+                text-decoration: none;
+                color: #fff;
+                &:hover {
+                    background: #fff;
+                    color: #000000;
+                    border: 1px solid red;
+                    margin: -1px;
+                    cursor: pointer;
                 }
             }
         }
