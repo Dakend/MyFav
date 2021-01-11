@@ -50,4 +50,14 @@ RSpec.describe 'Sessions', type: :system do
       end
     end
   end
+
+  describe 'Guest Login Function' do
+    context 'push guest-login button' do
+      it 'complete login and redirect post-user-page' do
+        visit new_user_session_path
+        find('.login-section__guest').click
+        expect(page).to have_content 'ゲストユーザー'
+      end
+    end
+  end
 end
