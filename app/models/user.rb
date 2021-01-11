@@ -5,7 +5,7 @@
 #  id                     :bigint           not null, primary key
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
-#  name                   :string(255)
+#  name                   :string(255)      not null
 #  profile                :string(255)
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -39,7 +39,7 @@ class User < ApplicationRecord
     find_or_create_by(email: 'guest@example.com') do |user|
       user.name = 'ゲストユーザー'
       user.password = SecureRandom.urlsafe_base64
-      user.profile = '都内在住、ゲストユーザです。おすすめのバンドの動画紹介記事を投稿しています。よろしくお願いします！'
+      user.profile = '都内在住、ゲストユーザです。役に立った技術動画の紹介記事を投稿しています。よろしくお願いします！'
     end
   end
   private

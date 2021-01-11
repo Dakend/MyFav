@@ -6,29 +6,35 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-3.times do |n|
-  User.create!(
-    email: "test#{n + 1}@example.com",
-    password: "password_#{n + 1}",
-    name: "test_user_#{n + 1}",
+require 'csv'
+
+CSV.foreach('db/csv/seed_users.csv', headers: true) do |row|
+  User.create(
+    name: row['name'],
+    email: row['email'],
+    password: row['password'],
+    profile: row['profile']
   )
 end
 
-users = User.all
-2.times do |n|
-  content = Faker::Lorem.sentence(word_count: 5)
-  title = "test_title_#{n + 1}"
-  user_id = n + 1
-  users.each { |user| user.posts.create!(content: content, title: title, user_id: user_id) }
+(1..4).each do |n|
+  user = User.find(n)
+  user.icon.attach(io: File.open("app/assets/images/users/user_#{n}_icon.jpg"), filename: "user_#{n}_icon.jpg")
 end
 
-posts = Post.all
-3.times do |n|
-   content = Faker::Lorem.sentence(word_count: 5)
-   image = "https://picsum.photos/210/310"
-   link = "https://www.youtube.com/"
-   title = "test_title_#{n + 1}"
-   post_id = n + 1
-   posts.each { |post| post.movies.create!(content: content, image: image, 
-                                           link: link, title: title, post_id: post_id) }
+CSV.foreach('db/csv/seed_posts.csv', headers: true) do |row|
+  post = PostForm.new(
+    post_title: row['post_title'],
+    post_content: row['post_content'],
+    movie_link_1: row['movie_link_1'],
+    movie_content_1: row['movie_content_1'],
+    movie_link_2: row['movie_link_2'],
+    movie_content_2: row['movie_content_2'],
+    movie_link_3: row['movie_link_3'],
+    movie_content_3: row['movie_content_3'],
+    movie_link_4: row['movie_link_4'],
+    movie_content_4: row['movie_content_4'],
+    user_id: row['user_id']
+  )
+  post.save
 end
