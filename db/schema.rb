@@ -70,9 +70,9 @@ ActiveRecord::Schema.define(version: 2020_12_20_062557) do
   end
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "image"
-    t.string "link"
-    t.string "title"
+    t.string "image", null: false
+    t.string "link", null: false
+    t.string "title", null: false
     t.text "content"
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_12_20_062557) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "content"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -122,9 +122,9 @@ ActiveRecord::Schema.define(version: 2020_12_20_062557) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
     t.string "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
