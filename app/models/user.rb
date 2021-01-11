@@ -35,6 +35,13 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :profile, length: { maximum: 160 }
 
+  def self.guest
+    find_or_create_by(email: 'guest@example.com') do |user|
+      user.name = 'ゲストユーザー'
+      user.password = SecureRandom.urlsafe_base64
+      user.profile = '都内在住、ゲストユーザです。おすすめのバンドの動画紹介記事を投稿しています。よろしくお願いします！'
+    end
+  end
   private
     def default_icon
       unless self.icon.attached?
