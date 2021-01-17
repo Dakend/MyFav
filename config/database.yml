@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: my_fav_production
-  username: my_fav
-  password: <%= ENV['MY_FAV_DATABASE_PASSWORD'] %>
+  database: my_favorite_tube_production
+  username: root
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
