@@ -24,7 +24,7 @@ RSpec.describe 'Sessions', type: :system do
         fill_in 'user_password', with: '00000000'
         click_button 'ログイン'
         expect(current_path).to eq user_path(user)
-        expect(page).to have_content 'ログインしました'
+        expect(page).to have_content 'ログインしました。'
       end
     end
 
@@ -44,9 +44,8 @@ RSpec.describe 'Sessions', type: :system do
         login(user)
         find('#nav-open').click
         click_link 'ログアウト', href: destroy_user_session_path
-        sleep 3
-        expect(page).to have_content 'ログアウトしました。'
         expect(current_path).to eq root_path
+        expect(page).to have_content 'ログアウトしました。'
       end
     end
   end
