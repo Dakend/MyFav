@@ -65,7 +65,7 @@ RSpec.describe 'Posts', type: :system do
         fill_in 'おすすめ動画#4 YouTube動画URL*', with: 'https://www.youtube.com/watch?v=tw-G2nMnM8A'
         fill_in 'post_form_movie_content_4', with: 'サムベネットのシャンゼリゼでの最終スプリントは印象に残りました。'
         click_button '投稿'
-        sleep 3
+        sleep 2
         expect(page).to have_content '投稿が完了しました。'
         expect(all('.post-show-content-head__card-flame-img').size).to eq(4)
         expect(all('.post-movie-content__img-cont').size).to eq(4)
