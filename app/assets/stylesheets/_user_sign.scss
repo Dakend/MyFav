@@ -16,7 +16,7 @@
         .signup-section {
             width: 40%;
             &__header {
-                height: 100px;
+                height: 88px;
                 &-ttl {
                     margin: 0;
                     font-weight: bold;
@@ -27,7 +27,10 @@
                 }
             }
             &__img {
+                display: block;
+                width: 100%;
                 height: 275px;
+                margin-bottom: 12px;
             }
             &__btn {
                 height: 55px;
