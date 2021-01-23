@@ -1,0 +1,59 @@
+@import 'common/format';
+
+.footer-container {
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    .section-left {
+        display: flex;
+        width: 50%;
+        justify-content: flex-start;
+        .footer-top {
+            @include just-block;
+            margin-left: 60px;
+            &__txt {
+                font-weight: bold;
+                font-size: 1.1rem;
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+            }
+        }
+        .footer-about {
+            @include just-block;
+            margin-left: 50px;
+            &__txt {
+                font-weight: bold;
+                font-size: 1.1rem;
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+            }
+        }
+    }
+    .section-right {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        .footer-sign {
+            @include just-block;
+            margin-right: 30px;
+            &__img {
+                width: 200px;
+                height: 18px;
+                display: block;
+                object-fit: cover;
+            }
+        }
+        .footer-copyrights {
+            @include just-block;
+            margin-right: 60px;
+            &__img {
+                width: 200px;
+                height: 10px;
+                display: block;
+                object-fit: cover;
+            }
+        }
+    }
+}
