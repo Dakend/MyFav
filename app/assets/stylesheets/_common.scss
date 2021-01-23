@@ -22,8 +22,10 @@ header {
 .wrapper {
     margin: 70px auto 0;
     min-width: 1200px;
+    main {
+        min-height: 84vh;
+    }
 }
-
 .post-top-container {
     background-color: #f0f0f0;
     margin: 0 auto;
