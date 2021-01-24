@@ -1,0 +1,11 @@
+@import 'common/format';
+
+.about-content {
+    margin-top: 150px;
+    @include just-block;
+    &__img {
+        width: 40%;
+        display: block;
+        object-fit: cover;
+    }
+}
