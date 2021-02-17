@@ -20,7 +20,7 @@ https://my-favorite-tube.com/
   → Ajaxによる処理を多く取り入れ、早いレスポンスを実現しています。  
   → JSを使わずともCSSで実装できるものについては、処理速度の観点からCSSで実装しています。  
 * RSpecによるテスト(ModelSpec・SystemSpec)を約100項目実装し、デプロイ時にPASSしています。  
-* インフラにAWS、開発環境にDocker/docker-compose、Version管理にGitHubのIssues/PullRequestを用いて、現場を意識した開発を行いました。
+* インフラにAWS、開発環境にDocker・docker-compose、Version管理にGitHubのIssues・PullRequestを用いて、現場を意識した開発を行いました。
 
 ## WEBページサンプル
 
@@ -48,7 +48,7 @@ https://my-favorite-tube.com/
 <br>  VPC / EC2 / RDS / Route53 / ACM / ALB / S3 / CloudWatch
 
 ### VSC
-* Git / GitHub (pull request, Issues)
+* Git / GitHub (PullRequest / Issues)
 
 ### API
 * YouTube Data API v3
@@ -63,7 +63,7 @@ https://my-favorite-tube.com/
 * プロフィール画像の投稿・編集 (ActiveStorage)
 
 ### 投稿機能  
-* YouTube動画のURLを貼り付けて、まとめ記事を投稿 (YouTube Data API v3, Ajax)
+* YouTube動画のURLを貼り付けて、まとめ記事を投稿 (YouTube Data API v3 / Ajax)
 * 投稿一覧
 * 投稿詳細表示
 * 投稿削除
@@ -72,13 +72,13 @@ https://my-favorite-tube.com/
 * いいね (Ajax）
 * ブックマーク (Ajax）
 * コメント (Ajax）
-* ページネーション (Ajax）
+* ページネーション (Ajax / gem: kaminari）
 * カテゴリー別一覧表示
 * ハッシュタグ別一覧表示
 * カテゴリー自動抽出
 
 ### その他
-* モデルに対するバリデーション(文字数・メールアドレス・パスワードなど)
+* モデルに対するバリデーション(文字数 / メールアドレス / パスワードなど)
 * Flash機能 (自作)
 
 ### 課題
