@@ -53,6 +53,9 @@ https://my-favorite-tube.com/
 ### API
 * YouTube Data API v3
 
+### ブラウザ動作確認
+* Chrome 87
+
 ## 機能一覧
 ### ユーザー機能
 * ユーザー登録・編集 (gem: devise)
