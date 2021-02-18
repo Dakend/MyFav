@@ -1,16 +1,16 @@
 <div class="post-top-container">
   <%= render 'posts/post_head_content', text: "新着", category: nil, posts: @posts %>
-  <% if @posts_entertainment %>
-    <%= render 'posts/post_head_content', text: "エンターテイメント", category: @category_entertainment, posts: @posts_entertainment %>
+  <% if @category_howto_style %>
+    <%= render 'posts/post_head_content', text: "ハウツー/スタイル", category: @category_howto_style, posts: @posts_howto_style  %>
   <% end %>
     <% if @posts_music %>
     <%= render 'posts/post_head_content', text: "音楽", category: @category_music, posts: @posts_music  %>
   <% end %>
+  <% if @posts_entertainment %>
+    <%= render 'posts/post_head_content', text: "エンターテイメント", category: @category_entertainment, posts: @posts_entertainment %>
+  <% end %>
   <% if @posts_film_animation %>
     <%= render 'posts/post_head_content', text: "映画/アニメ", category: @category_film_animation, posts: @posts_film_animation %>
-  <% end %>
-  <% if @posts_sports %>
-    <%= render 'posts/post_head_content', text: "スポーツ", category: @category_sports, posts: @posts_sports  %>
   <% end %>
   <% if @posts_latest_favorite %>
     <%= render 'posts/post_head_content', text: "いいね", category: nil, posts: @posts_latest_favorite %>
