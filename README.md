@@ -23,6 +23,9 @@ https://my-favorite-tube.com/
 * インフラにAWS、開発環境にDocker・docker-compose、Version管理にGitHubのIssues・PullRequestを用いて、現場を意識した開発を行いました。
 
 ## WEBページサンプル
+<img src="https://user-images.githubusercontent.com/49805038/108621532-874f0d80-7476-11eb-9ecc-cb0e94afb24f.png">
+<img src="https://user-images.githubusercontent.com/49805038/108621558-b9f90600-7476-11eb-97c3-69043ac9d19d.png">
+
 
 ## 環境 / 使用技術
 ### フロントエンド
